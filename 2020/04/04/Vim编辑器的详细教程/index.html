@@ -12,7 +12,7 @@
     
     
     
-    <title>Archives | csm&#39;s blog</title>
+    <title>Vim编辑器的详细教程 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,82 +162,204 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">Vim编辑器的详细教程</h1>
     
-        
-        <div class="cube-archive" style="margin-top: 0;">
-            
-                
-                   
-                            <h1 class="title">2020</h1>
-                            <ul class="posts">
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/">英语六级备考笔记</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">习题总结</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">习题总结</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">六级备考笔记二（作文）</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Vim编辑器的详细教程</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">hexo博客安装</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">hexo添加评论功能-Gitment评论系统</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/04/04/hello-world/">Hello World</a>
-                            </li>
-                
-            
-                    </ul>
-                        </div>
-        
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-04
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h4 id="Vim编辑器的详细教程"><a href="#Vim编辑器的详细教程" class="headerlink" title="Vim编辑器的详细教程"></a>Vim编辑器的详细教程</h4><p>vim编辑器：</p>
+<p>​    文本编辑器：</p>
+<p>​        文本：纯文本信息，ASCII text ,不能有任何修饰信息（颜色，字体，大小）</p>
+<p>​        支持：ASCII码（纯英文），UNICODE（全球统一编码）； GBK（中文编码）</p>
+<p>​        </p>
+<p>文本编辑器分类：</p>
+<p>​    行编辑器：sed</p>
+<p>​    全屏编辑器：vi,nano ,vim  </p>
+<p>​    单词：Visual  interface ;   Vi  improved </p>
+<p>vim：模式化的编辑器（在不同模式下：按键的功能不一样）</p>
+<p>​    基本模式：</p>
+<p>​            1）编辑模式 ：</p>
+<p>​            2）输入模式 ：</p>
+<p>​            3）末行模式（内置的命令行接口）：</p>
+<p>​        关闭保存：俩个大小的Z</p>
+<p>​    vim  [OPTION]  file </p>
+<p>​    +#  :打开文件后，直接让光标处于第#行行首</p>
+<p>​    +/pattern:打开文件后，直接让光标处于第一个被pattern匹配到的行的行首 </p>
+<p>​    模式转换：</p>
+<p>​        1）编辑模式（默认模式）：–&gt; 进入输入模式     </p>
+<ul>
+<li>i:  insert(在光标所在处输入)   </li>
+<li>a :append （光标所在处后方输入）  </li>
+<li>o  :在光标所在处下方打开新的行        </li>
+<li>I：（大写i)   :在光标所在行的行首输入</li>
+<li>A ：在光标所在行行尾输入</li>
+<li>O ：在光标所在行的上方打开新的一行</li>
+</ul>
+<p>​        2）输入模式：插入数据   –&gt; 编辑模式   </p>
+<ul>
+<li>ESC键</li>
+</ul>
+<p>​        3）末行模式  （非常强大的内置命令行接口）</p>
+<ul>
+<li>编辑模式—&gt;末行模式    输入冒号：</li>
+<li>可以输入指令进行一些操作（支持许多负咋操作）</li>
+<li>末行–&gt;编辑模式  ：ESC</li>
+</ul>
+<p>关闭文件：</p>
+<p>​            ZZ ：保存并退出 （编辑模式下）</p>
+<p>​            :q  退出  （末行模式下） </p>
+<p>​            :wq  保存修改并退出</p>
+<p>​            : x  保存并退出</p>
+<p>​            : w /path/to/somefile  (将修改保存到另外的文件中)</p>
+<p>光标跳转：</p>
+<p>​        字符间跳转 ：前面还可以加数字（代表跳几格）</p>
+<p>​                h: 向左跳一个字符</p>
+<p>​                l :向右跳一个字符</p>
+<p>​                j:向下跳转</p>
+<p>​                k :向上跳转</p>
+<p>​        单词间跳转</p>
+<p>​                w :下一个单词的词首</p>
+<p>​                b :当前或前一个单词的词首</p>
+<p>​                e :当前或后一个单词词尾</p>
+<p>​        行首行尾跳转</p>
+<p>​                ^ ：跳转到行首的第一个非空字符</p>
+<p>​                0：跳转到绝对行首</p>
+<p>​                &amp; ：跳转到绝对行尾</p>
+<p>​        行间跳转</p>
+<p>​                #G： 跳转至第#行行首</p>
+<p>​                1G,gg :跳转到行首</p>
+<p>​                G  ：跳转到行尾</p>
+<p>​        句间跳转：</p>
+<p>​            ）</p>
+<p>​           （</p>
+<p>​        段间跳转：</p>
+<p>​            }</p>
+<p>​            {</p>
+<p>翻屏：</p>
+<p>​    Ctrl+f  :向文件尾部翻一屏</p>
+<p>​    Ctrl+b :向文件首部翻一屏</p>
+<p>​    Ctrl+d :向文件尾部翻半屏</p>
+<p>​    Ctrl+u :向文件首部翻半屏</p>
+<p>​    k ,j  ：上下一行行的翻</p>
+<p>​    </p>
+<p>vim的编辑命令：</p>
+<p>​    字符编辑：</p>
+<p>​            x:  删除光标所在处的字符</p>
+<p>​            #x :删除光标所在处起始的#个字符</p>
+<p>​            xp: 交换光标所在处字符和其后面字符的位置</p>
+<p>​    替换命令</p>
+<p>​            r :替换光标所在处的字符 ，后面再加个字符</p>
+<p>​    删除命令</p>
+<p>​            x :</p>
+<p>​            d :删除命令，可结合光标跳转字符，实现范围删除</p>
+<p>​            d$ :删除当前到行尾</p>
+<p>​            d^: 删除当前到行首</p>
+<p>​            dw :删除一个单词</p>
+<p>​            de:</p>
+<p>​            db: </p>
+<p>​            dd :删除一行      </p>
+<p>​    都支持在加个数字 #dd  :删除光标所在行其实的供#行（删除的内容都会在缓冲器中–》可以粘贴）</p>
+<p>​    粘贴命令：</p>
+<p>​            p: 缓冲器中的内容如果为整行，则粘贴在当前光标所在行的下方，否则粘贴在光标后方</p>
+<p>​            P: 刚好相反（  上方，前方）</p>
+<p>​    复制命令（yank, y)：</p>
+<p>​            y : 复制，工作行为相似于d 命令</p>
+<p>​            y$ :</p>
+<p>​            y^:</p>
+<p>​            ye :</p>
+<p>​            yy :复制一整行</p>
+<p>​            yw :复制一个单词</p>
+<p>​    改变命令（change,c) :</p>
+<p>​            编辑模式—&gt; 输入模式 ； 实现删除操作</p>
+<p>​            cc  :删除一行，且转换成插入操作        </p>
+<p>​            其他的用法和d 一样</p>
+<p>​    可视化模式：</p>
+<p>​            v :  按字符选定 </p>
+<p>​            V  :按行选定    </p>
+<p>​            结合编辑命令：  d   c  y  p</p>
+<p>​    撤销操作：</p>
+<p>​            u : 撤销此前的操作（一般可保持50个） </p>
+<p>​            可结合数字使用</p>
+<p>​    撤销撤销操作：</p>
+<p>​            Ctrl+r  :恢复此前的撤销操作</p>
+<p>​    重复执行前一个编辑操作：</p>
+<p>​            .  （点号）：</p>
+<p>​    vim 自带的练习教程： vimtutor </p>
+<p>vim末行模式：  （内建的 命令行接口）</p>
+<p>​    编辑模式–&gt;末行模式  ：</p>
+<p>​    （1）：地址定界</p>
+<p>​            指明 :start_pos[,end_pos]</p>
+<p>​            #:  特定的第#行，例如5 第5行</p>
+<p>​            . :当前行    </p>
+<p>​            $:最后一行   </p>
+<p>​            #，#：指定行范围，左侧起始，右侧结束</p>
+<p>​            #，+# : 指定行范围，左侧起始，右侧相对偏移量 3,+7 </p>
+<p>​            1,$ :全文</p>
+<p>​            % ：全文</p>
+<p>​            /pattern/  :第一次被模式匹配到的行</p>
+<p>​    （2）</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                六级备考笔记二（作文）
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">
+                hexo博客安装
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'cuishimiao',
+        repo: 'gitment-comments',
+        oauth: {
+            client_id: '1cba83d10d7d1147ba5a',
+            client_secret: '6e044b1e9b2287c4174dbc303b0837d2eab4ba4e',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -387,7 +509,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%8A%80%E6%9C%AF/">#技术</a>
         </div>
         
@@ -413,17 +535,17 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/hexo/">#hexo</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Gitment/">#Gitment</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
