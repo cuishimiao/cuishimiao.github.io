@@ -12,7 +12,7 @@
     
     
     
-    <title>csm&#39;s blog</title>
+    <title>Tags: Gitment | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,196 +162,29 @@
     
     <div class="cube-content">
         <div class="cube-left">
+            <style>
+    @media(max-width: 768px) {
+        body {
+            background-color: #fff!important;
+        }
+    }
+</style>
+<div class="cube-archives">
+    
+    <div class="cube-archive" style="margin-top: 0;">
+        <h1 class="title">Gitment</h1>
+        
+        <ul class="posts">
             
-<div class="cube-excerpt" id="cube-excerpt-hexo博客安装">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">hexo博客安装</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2020-04-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/hexo/" class="cube-excerpt-tag-link">#hexo</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>1.安装指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>2.将博客生成静态站点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo   g</span><br></pre></td></tr></table></figure>
-
-<p>3 .生成的public文件夹就自己当成静态网站进行部署</p>
-<p>hexo  server:启动服务</p>
-<p>4.自定义主题（网址）：</p>
-<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;ZEROKISEKI&#x2F;hexo-theme-cube.git themes&#x2F;cube --depth 1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
-
-<p>5.图床（图片处理） ：七牛云</p>
-<p>6）评论系统：</p>
-<ul>
-<li>disqus</li>
-<li>来必力</li>
-</ul>
-<p>7）搜索：  swiftype 网站</p>
-<h4 id="npm换源："><a href="#npm换源：" class="headerlink" title="npm换源："></a>npm换源：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>8）访问量的来源统计：</p>
-<p>友盟：</p>
-<p>CNZZ</p>
-<p>百度</p>
-<p>9）上传到github：</p>
-<ul>
-<li>为 Hexo 安装 Git 插件<br>安装 hexo-deployer-git，否则会报 ERROR Deployer not found: git 的错误。<br><code>npm install hexo-deployer-git --save</code></li>
-<li>生成静态文件和部署：<br><code>hexo g &amp; d</code></li>
-</ul>
-
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-hexo添加评论功能-Gitment评论系统">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">hexo添加评论功能-Gitment评论系统</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2020-04-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/Gitment/" class="cube-excerpt-tag-link">#Gitment</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <ul>
-<li>第一步：注册 OAuth Application</li>
-</ul>
-<ol>
-<li><p>登录 Github。</p>
-</li>
-<li><p>前往 <a href="https://github.com/settings/profile" target="_blank" rel="noopener">https://github.com/settings/profile</a></p>
-</li>
-<li><p>点击左侧下方的 <code>Developer settings</code></p>
-</li>
-<li><p>点击绿色 <code>Register a new application</code></p>
-</li>
-<li><p>填写以下内容：</p>
-</li>
-<li><pre><code>Application name：Gitment
-Homepage URL：https://ryanluoxu.github.io/
-Application description：Blog comment system
-Authorization callback URL：https://ryanluoxu.github.io/
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">7. 点击 &#96;Register application&#96;</span><br><span class="line"></span><br><span class="line">8. 得到：</span><br><span class="line"></span><br><span class="line">   Client ID:</span><br><span class="line"></span><br><span class="line">   Client Secret:</span><br><span class="line"></span><br><span class="line">- 第二步：创建存放 gitment-comments 的 repository</span><br><span class="line"></span><br><span class="line">1. 打开 D:\blog\themes\next_config.yml</span><br><span class="line">2. 找到 &#96;Gitment&#96;</span><br><span class="line">3. 如下修改：</span><br></pre></td></tr></table></figure>
-gitment:
-enable: true
-mint: true         # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
-count: true         # Show comments count in post meta area
-lazy: false         # Comments lazy loading with a button
-cleanly: false     # Hide &apos;Powered by ...&apos; on footer, and more
-language:         # Force language, or auto switch by theme
-github_user: ryanluoxu     # 此处 - Your Github ID
-github_repo: gitment-comments # 此处注意 - The repo you use to store Gitment comments
-client_id: xxxxxxxxxxxxxxxxxx # 此处 - Github client id for the Gitment
-client_secret: xxxxxxxxxxxxx # 此处 - Github access secret token for the Gitment
-proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
-redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
-
-</code></pre></li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 最后:之后生成并且部署才会生效，本地有时没有效果</span><br></pre></td></tr></table></figure>
-<p>hexo g -d</p>
-<p>```</p>
-<p>之后文章底部会出现 <code>初始化本文的评论页</code>，点击初始化。</p>
-
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-Hello World">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2020/04/04/hello-world/">Hello World</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2020-04-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2020/04/04/hello-world/">Read More</a>
-    </footer>
-</div>
-
-
-
-<ul class="cube-pagination cube-pagination-6">
-    
-    <li class="cube-pagination-prev disabled">
-        <span>« Prev</span>
-    </li>
-    
-    
-        
-            
-            <li class="cube-pagination-index disabled">
-                <span>1</span>
+            <li class="post">
+                <a href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">hexo添加评论功能-Gitment评论系统</a>
             </li>
             
+        </ul>
         
+    </div>
     
-
-    
-    <li class="cube-pagination-next disabled">
-        <span>Next »</span>
-    </li>
-    
-</ul>
-
-<!--其他组件后续添加-->
+</div>
         </div>
         <div class="cube-right">
             
@@ -475,7 +308,7 @@ redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when 
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%8A%80%E6%9C%AF/">#技术</a>
         </div>
         
