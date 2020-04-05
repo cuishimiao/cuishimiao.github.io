@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="csm">
+    
+    <meta name="description" content="一名计算机专业的学生">
+    
+    
+    
+    
+    
+    
+    <title>csm&#39;s blog</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: 'Loading';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">Open Lyrics</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">Top</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" http://cube-1252774894.cosgz.myqcloud.com/background.png " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">senrenbankaの部落格</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('http://cube-1252774894.cosgz.myqcloud.com/background.png');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">senrenbankaの部落格</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            
+<div class="cube-excerpt" id="cube-excerpt-最短路问题总结">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/">最短路问题总结</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-05
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="cube-excerpt-tag-link">#算法 最短路</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="最短路问题分类"><a href="#最短路问题分类" class="headerlink" title="最短路问题分类"></a>最短路问题分类</h4><p>1）单源最短路<br>2）多源最短路（不止一个起点）</p>
+<p><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/NWsIMXrlhEMs.png?imageslim" alt="mark"></p>
+<p>稠密图： 朴素版Dijstra  O(n^2)    数据结构：邻接矩阵<br>稀疏图： 堆优化版Dijstra O(mlogn) 存储结构：邻接表</p>
+<p>考察点：<br>1）建图 ：将题目抽象成最短路问题</p>
+<p>2）Dijstra：基于贪心</p>
+<p>朴素版Dijstra：<br>算法步骤：<br>1）初始化距离 ：memset(dist,0x3f,sizeof dist)<br>                dist[1]=0;</p>
+<p>集合s :存放当前已经确定最短距离的点<br>2) for i: n<br>     t&lt;-找到不在s中的距离最近的点<br>     s&lt;-<br>     用t 来更新其他所有点的距离<br>    for(从t出去的所有点)<br>    判断是否 dist(x) &gt;dist[t]+w<br>    更新</p>
+<p><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/N5FXn3ND2yW9.png?imageslim" alt="mark"></p>
+<p>重边和自环的处理：<br>1）最短路不会用到重边<br>2）自环只需要取最短的那条</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dijstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">    </span><br><span class="line">    dist[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t=<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">//每次迭代的过程中我们都先找到当前未确定的最短距离的点中距离最短的点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            <span class="keyword">if</span>(!st[j] &amp;&amp; (t==<span class="number">-1</span> || dist[t]&gt;dist[j]))</span><br><span class="line">             t=j;</span><br><span class="line">        <span class="comment">//更新最短距离的点到其他点的距离</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            dist[j]=<span class="built_in">min</span>(dist[j],dist[t]+g[t][j]);</span><br><span class="line">        st[t]=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dist[n]==<span class="number">0x3f3f3f3f</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dist[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>堆优化的Dijstra：稀疏图</p>
+<p>在堆中修改一个数：logn </p>
+<p>堆：1）优先队列<br>    2）手写堆</p>
+<p>#include <queue></p>
+<p>typedef pair&lt;int,int&gt; PII ;//存距离 存第几个点</p>
+<p>priority_queue&lt;PII,vector<PII>,greater<PII>&gt; heap; //小根堆</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dijstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">    dist[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    priority_queue&lt;PII,<span class="built_in">vector</span>&lt;PII&gt;,greater&lt;PII&gt;&gt; heap;</span><br><span class="line">    heap.push(&#123;<span class="number">0</span>,<span class="number">1</span>&#125;); <span class="comment">//第一维是距离，第二维是节点</span></span><br><span class="line">    <span class="keyword">while</span>(heap.<span class="built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//获取最短节点</span></span><br><span class="line">        <span class="keyword">auto</span> t=heap.top();</span><br><span class="line">        heap.pop();</span><br><span class="line">        <span class="keyword">int</span> ver=t.second,distance=t.first;</span><br><span class="line">        <span class="keyword">if</span>(st[ver]) <span class="keyword">continue</span>; <span class="comment">//去备份除垄余节点</span></span><br><span class="line">        </span><br><span class="line">        st[ver]=<span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//更新其他节点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=h[ver];i!=<span class="number">-1</span>;i=ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j=e[i];</span><br><span class="line">            <span class="keyword">if</span>(dist[j]&gt;distance+w[i])</span><br><span class="line">                dist[j]=distance+w[i];</span><br><span class="line">                </span><br><span class="line">            heap.push(&#123;dist[j],j&#125;);</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dist[n]==<span class="number">0x3f3f3f3f</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> dist[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>Bellman-Ford算法</p>
+<p>步骤：<br>    for  n 次       //迭代了k次，从1号点经过不超过k条边的最短路的距离<br>                    //+备份 ,保证每次遍历一条边都用上次的结果，防止串联<br>        for  所有边a,b,w  a—&gt;b (w)<br>            dist[b]=min(dist[b],dist[a]+w)<br>    图示：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/J23MUJcatUIW.png?imageslim" alt="mark"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bellman_ford</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dist);</span><br><span class="line"></span><br><span class="line">    dist[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i ++ ) <span class="comment">//每次一条边</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memcpy</span>(last, dist, <span class="keyword">sizeof</span> dist); <span class="comment">//备份</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span>  a = edges[j].a,b=edges[j].b,c=edges[j].c;</span><br><span class="line">            dist[b] = <span class="built_in">min</span>(dist[b], last[a] + c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>循环完成后对于每个点都满足： dist[b]&lt;=dist[a]+w;</p>
+<p>如果有负权回路—&gt; 最短路径是不一定存在的。<br>Bellman-Ford算法可以求是否有负权变的。 如果遍历到第n次，还有更新—&gt;说明遍历了n条边（存在负权）。</p>
+<p>SPFV算法：要求不能有负环（限制最少的一个算法）</p>
+<p>是对Bellman算法的优化：只有当dist[a]变化时，才更新它的所有出边</p>
+<p><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/RUUseE7A9MaX.png?imageslim" alt="mark"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">spfa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">    <span class="comment">//初始化，将1号点放入队列</span></span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q; </span><br><span class="line">    dist[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    q.push(<span class="number">1</span>);</span><br><span class="line">    st[<span class="number">1</span>]=<span class="literal">true</span>;   <span class="comment">//1号点放入队列</span></span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t=q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        st[t]=<span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//更新t的出边节点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=h[t];i!=<span class="number">-1</span>;i=ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j=e[i];</span><br><span class="line">            <span class="keyword">if</span>(dist[j]&gt;dist[t]+w[i])</span><br><span class="line">            &#123;</span><br><span class="line">                dist[j]=dist[t]+w[i];</span><br><span class="line">                <span class="keyword">if</span>(!st[j])   <span class="comment">//改动的节点入队，前提是不在队列中</span></span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(j);</span><br><span class="line">                    st[j]=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dist[n]==<span class="number">0x3f3f3f3f</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> dist[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>SPFA判断负环：<br>dist[x]  :1~x的最短距离<br>cnt[x]   :边数</p>
+<p>//更新操作<br>dist[x]=dist[t]+w;<br>cnt[x]=cnt[t]+1;</p>
+<p>if(cnt[x]&gt;=n)<br>存在负环：</p>
+<p>注意：1号点可能到不了负环<br>所有开始需要将所有点都放到队列里面。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">spfa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="comment">//开始时将所有点都放入队列，因为1号点可能到不了负环</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        st[i]=<span class="literal">true</span>;</span><br><span class="line">        q.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t=q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        st[t]=<span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=h[t];i!=<span class="number">-1</span>;i=ne[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> j=e[i];</span><br><span class="line">            <span class="keyword">if</span>(dist[j]&gt;dist[t]+w[i])</span><br><span class="line">            &#123;</span><br><span class="line">                dist[j]=dist[t]+w[i];</span><br><span class="line">                cnt[j]=cnt[t]+<span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">                <span class="keyword">if</span>(cnt[j]&gt;=n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">if</span>(!st[j])</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(j);</span><br><span class="line">                    st[j]=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Floyd算法：（多源最短路）   ：基于动态规划</p>
+<p>存储：d[i,j] :边的长度</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">floyd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k ++ )</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j ++ )</span><br><span class="line">                d[i][j] = <span class="built_in">min</span>(d[i][j], d[i][k] + d[k][j]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>循环之后，d[i,j]代表i到j的最短路径。</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-英语六级备考笔记">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/">英语六级备考笔记</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E8%8B%B1%E8%AF%AD/" class="cube-excerpt-tag-link">#英语</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="选词填空-："><a href="#选词填空-：" class="headerlink" title="选词填空 ："></a>选词填空 ：</h4><p>1.第一步，识别单词</p>
+<p>2.确定词义+词性</p>
+<p>​    词义靠逻辑</p>
+<p>​    词性靠结构</p>
+<p>名次必考结构：</p>
+<p>1）冠词+名词</p>
+<p>2）冠词+形容词+名词</p>
+<p>3）数字相关词+名词</p>
+<p>动词：</p>
+<p>1）to do +动词原形</p>
+<p>minimum :最小量</p>
+<p>stop  +doing sth :shooting up ;</p>
+<p>has been done  :     championed (捍卫，维护) ==支持</p>
+<p>a   systematic (adj)   review and analysis(n)</p>
+<p>总结：</p>
+<p>1）词性，将单词根据词性分类</p>
+<p>2）根据前后文逻辑，选择合理的单词</p>
+<p>3）固定搭配 </p>
+<p>文章：说明文  </p>
+<h4 id="阅读短路匹配2-1"><a href="#阅读短路匹配2-1" class="headerlink" title="阅读短路匹配2+1"></a>阅读短路匹配2+1</h4><p>基础：方法论 （基础）</p>
+<p>强化：真题  （练习）</p>
+<p>冲刺：补充  </p>
+<p>查漏补缺：同意转换</p>
+<p>完成 &gt;完美</p>
+<p>时间 ：20分钟  目标：8个</p>
+<p>1.读10句，留红色恒基，模糊记忆就可以</p>
+<p>2.先收尾后其他，迅速找词，不要强制去翻译</p>
+<p>3.有线索，用2+1. </p>
+<p>什么样的词不值得标出？</p>
+<p>答：介词，连词，助动词，情态动词</p>
+<p>人名/地名/数字; 名动形副；否定词</p>
+<h3 id="写作："><a href="#写作：" class="headerlink" title="写作："></a>写作：</h3><ul>
+<li>书写工整，层次分明</li>
+<li>减少涂改，干净整洁</li>
+<li>语法无误，拼写正确</li>
+</ul>
+<p>写作中常用的八个经典句型—-&gt;通常用来写第一段。</p>
+<p>抽象：</p>
+<p>write an essay on the importance of having a sense of social responsibility?</p>
+<h4 id="第一段点题：-引出主题"><a href="#第一段点题：-引出主题" class="headerlink" title="第一段点题：(引出主题)"></a>第一段点题：(引出主题)</h4><p>句型1：  … is of great/vital /utmost importance .</p>
+<p>句型2： … plays an extremely importance role.</p>
+<p>it  is of utmost importance for youngsters to assume（承担） social responsibility. </p>
+<p>扩展： 1. 时代（时间）—&gt;在当今社会    in contemporary world,  2. 为什么？ 因为当代社会有更多的机会。  In contemporary world where social  problems abound ,it is …..    </p>
+<p>it  goes without saying that.  众所周知</p>
+<h4 id="举例："><a href="#举例：" class="headerlink" title="举例："></a>举例：</h4><p>An increasing number of people …</p>
+<p>more and more people ….</p>
+<p>The number of … is surging in </p>
+<h4 id="第二段怎么写？"><a href="#第二段怎么写？" class="headerlink" title="第二段怎么写？"></a>第二段怎么写？</h4><h4 id="万能背景："><a href="#万能背景：" class="headerlink" title="万能背景："></a>万能背景：</h4><p>关于经济，社会，科技等方面：</p>
+<p>doing exercise:</p>
+<p>1)to begin with ,doing exercise can help us relax. </p>
+<ul>
+<li>添加背景</li>
+</ul>
+<h4 id="翻译："><a href="#翻译：" class="headerlink" title="翻译："></a>翻译：</h4><ul>
+<li>单词的积累</li>
+<li>结构的划分</li>
+<li>句意的转换（基础语法）</li>
+</ul>
+<p>1.步骤：</p>
+<ul>
+<li>解决逗号</li>
+<li>找出主干    : 主谓    主谓宾    主系表    主谓双宾   主谓宾宾补</li>
+</ul>
+<p>2.细节：</p>
+<ul>
+<li>词义选择</li>
+<li>词性转换</li>
+<li>时态转换      =》  转换成定义从句，状语从句，名词性从句，语态转换</li>
+<li>删除法,</li>
+<li>添加法</li>
+</ul>
+<p>每周练习一，俩篇： </p>
+<ul>
+<li><p>找出句子主干</p>
+<ul>
+<li>1.找动词</li>
+<li>2.找动词的发出者：主语</li>
+<li>3.找动词的作用者：宾语</li>
+</ul>
+</li>
+<li><p>英语就一个动词：—-》中文有好多动词</p>
+<ul>
+<li>1.使用非谓语动词<ul>
+<li>to do 表示目的</li>
+<li>doing  :表主动</li>
+<li>ed       :表被动的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>缩句练习：</p>
+<ul>
+<li>1.判卷的时候<ul>
+<li>如果主干翻译到了：会得分</li>
+<li>如果修饰符翻对了，主干没翻对：不得分</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>真题：</p>
+<p>任务一：背诵段落里的生词</p>
+<p>任务二：找句子的主干 （缩句）</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-习题总结">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">习题总结</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/" class="cube-excerpt-tag-link">#算法</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="完全二叉树：除了最后一层可能不满外，其他层都满的。"><a href="#完全二叉树：除了最后一层可能不满外，其他层都满的。" class="headerlink" title="完全二叉树：除了最后一层可能不满外，其他层都满的。"></a>完全二叉树：除了最后一层可能不满外，其他层都满的。</h4><p>1) 数据范围可能超：LL</p>
+<p>2）    </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> depth;</span><br><span class="line">LL maxv;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> d=<span class="number">1</span>,i=<span class="number">1</span>;i&lt;=n;i*=<span class="number">2</span>;d++)</span><br><span class="line">&#123;	</span><br><span class="line">	LL s=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;i+(<span class="number">1</span>&lt;&lt;d<span class="number">-1</span>) &amp;&amp; j&lt;=n;j++)</span><br><span class="line">        s+=w[j];</span><br><span class="line">    <span class="keyword">if</span>(s&gt;maxv)</span><br><span class="line">    &#123;</span><br><span class="line">        depth=d;</span><br><span class="line">        maxv=s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>地牢大师：</p>
+<p>1.蓝桥杯用的是C99编译器，要注意c11的特性可能没法用</p>
+<p>2）Flood FIll 从二维拓展到三维。</p>
+<p>auto ：c++11的编译方式。。。</p>
+<p>全球变暖：</p>
+<p>1）求多少个连通块 （一个bool数组搞定）</p>
+<ul>
+<li>一共有多少个单元 total</li>
+<li>有多少个单元与海相连 bound<ul>
+<li>每个格子出队的时候，判断一下周围有没有大海</li>
+</ul>
+</li>
+<li>if(total==bound)  淹没</li>
+</ul>
+<p>2）统计多少个连通块会被淹没掉（如何判断连通块有没有被淹没）</p>
+<p>贪心：</p>
+<p>常用方法：</p>
+<p>1）排序 </p>
+<p>2）均值不等式</p>
+<p>3）绝对值不等式</p>
+<p>付账问题：</p>
+<p>思路：均摊的时候，标准差最小</p>
+<p>1）当所有人钱数大于均值时，取均值</p>
+<p>2）当钱数少于均值时，全出，剩下的交给钱比它多的人均摊</p>
+<p>求的是标准层，可以先求方差。</p>
+<p>分类讨论算法：(乘积最大)</p>
+<p>1）先排个序，再分类讨论</p>
+<p>2）k==n  ：  肯定全选</p>
+<p>3）k&lt;n  :</p>
+<p>​        如果k是偶数，结果必然非负 &gt;0</p>
+<p>​                    找绝对值最大的前K个数（俩遍同时走，看哪边绝对值大)</p>
+<p>​        如果k是奇数：</p>
+<p>​                如果所有数均是负数：答案必然*小于0</p>
+<p>​                            从右边开始选</p>
+<p>​                至少存在一个非负数：结果必然非负 &gt;0</p>
+<p>​                        必然先选一个绝对值最大的非负数。</p>
+<p>​                        转化成了k是偶数的问题</p>
+<p>​            </p>
+<p>后缀表达式：（逆波兰式）</p>
+<p>用的是栈：数字放入栈中，遇到运算符去除俩数字进行运算，将结果入栈。</p>
+<p>树的后序遍历==逆波兰式</p>
+<p>二叉树：内部节点是符号    叶子节点是运算数</p>
+<p>分类：</p>
+<p>1）M=0  :全部加</p>
+<p>2）M&gt;0   :</p>
+<p>并查集：（修改数组）</p>
+<p>1）普通并查集</p>
+<p>2）单量表式的并查集：p[i] :单链表中的下一个节点，从i开始向右找，取第一个空的位置。</p>
+<p>​    开始每个p[x]=x;</p>
+<p>​    当某个数x被用掉时：p[x]=x+1;</p>
+<ul>
+<li>1)x=find(x) :</li>
+<li>2)p[x]=x+1</li>
+</ul>
+<p>倍数问题：</p>
+<p>背包问题：组合问题求最优解</p>
+<p>给定n个数，选K个数，和最大，满足一些限制条件。</p>
+<p>f[ i ,j,k ] :一个限制一维</p>
+<p>1）从前i个数中选</p>
+<p>2）选j个数</p>
+<p>3）总和模大K的余数是k。</p>
+<p>目标：求最大值</p>
+<p>状态计算： 集合的划分依据：</p>
+<p>1）选第i个物品  : 第i个已经确定了,从i-1个数中选，选j-1个数， 余数为(k-Ai)%K。</p>
+<p>2）不选第i个物品：从前i-1个物品，选j个，余数是k  :f(i-1,j,k)</p>
+<p>特点：余K的数相同的时候，我们会取更大的数，因此对于余数相同的数只需考虑前三大的数。（贪心）</p>
+<p>初始化：当j =0时；一定是0</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-习题总结">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">习题总结</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95-%E6%90%9C%E7%B4%A2-BFS/" class="cube-excerpt-tag-link">#算法 搜索  BFS</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="搜索题目总结（侧重写代码）"><a href="#搜索题目总结（侧重写代码）" class="headerlink" title="搜索题目总结（侧重写代码）"></a>搜索题目总结（侧重写代码）</h4><p>Flood FIll:（洪水填充法） ：可以在线性时间复杂度内，找到某个点所在的连通块。</p>
+<p>​    1.池塘计数   (找连通块)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">	坐标的问题，有俩维：</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII ;</span><br><span class="line"></span><br><span class="line">PII  q[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"><span class="keyword">char</span> g[N][N];</span><br><span class="line"></span><br><span class="line"><span class="comment">//找连通块</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">auto</span> t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=t.x<span class="number">-1</span>;i&lt;=t.x+<span class="number">1</span>;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=t.y<span class="number">-1</span>;j&lt;=t.y+<span class="number">1</span>;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(t.x==i &amp;&amp; t.y==j) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(i&lt;<span class="number">0</span> || i&gt;=n || j&lt;<span class="number">0</span> || j&gt;=m) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(g[i][j]==<span class="string">'.'</span> || st[i][j]) continnue;</span><br><span class="line">               </span><br><span class="line">                st[i][j]=<span class="literal">true</span>;</span><br><span class="line">                q[++tt]=&#123;i,j&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    2.城堡问题 (墙 是二进制的表示)   ：统计一片连通区的面积</p>
+<p>​        1）.求连通块的个数，</p>
+<p>​        2）.求最大的连通块</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> g[N][N];</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII q[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> area=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> dx[<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;; <span class="comment">//向四个方向扩展</span></span><br><span class="line">    <span class="keyword">int</span> dy[<span class="number">4</span>]=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">auto</span> t=q[hh++];</span><br><span class="line">        area++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> a=t.x+dx[i],b=t.y+dy[i];</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">0</span> || a&gt;=n || b&lt;<span class="number">0</span> || b&gt;=m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(st[a][b] ) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j]&gt;&gt;i &amp;<span class="number">1</span>) <span class="keyword">continue</span>; <span class="comment">//如果有墙，则跳过</span></span><br><span class="line">            st[a][b]=<span class="literal">true</span>;</span><br><span class="line">            q[++tt]=&#123;a,b&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    3.山峰和山谷    ：统计联通区和周围的关系</p>
+<p>​        1）如果周围没有比它高的—&gt;山峰</p>
+<p>​        2）如果周围没有比它矮的—-&gt;山谷</p>
+<p>​    所有Flood Fill的时候，统一一下，周围是否有比它高的，比它矮的：</p>
+<p>​    模型： </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span> &gt; PII;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> h[N][N];</span><br><span class="line">PII q[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy,<span class="keyword">bool</span> has_higher,<span class="keyword">bool</span> has_lower)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    st[sx][sy]=<span class="number">0</span>;</span><br><span class="line">    st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">        PII t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=t.x<span class="number">-1</span>;i&lt;=t.x+<span class="number">1</span>;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=t.y<span class="number">-1</span>;j&lt;=t.y+<span class="number">1</span>;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i&lt;<span class="number">0</span> || i&gt;=n || j&lt;<span class="number">0</span> || j&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(h[i][j]!=h[t.x][t.y])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(h[i][j]&lt;h[t.x][t.y]) has_lower=<span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">else</span> has_higher=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                st[i][j]=<span class="literal">true</span>;</span><br><span class="line">                q[++tt]=&#123;i,j&#125;;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最短路模型：</p>
+<p>​    1.迷宫问题</p>
+<p>​    1）求最短路径</p>
+<p>​    2）记录路径：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII pre[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pre[sx][sy]=&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">        PII t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a=dx[i]+t.x,b=dy[i]+t.y;</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">0</span> || a&gt;=n || b&lt;<span class="number">0</span> ||b&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(st[a][b] || g[a][b]==<span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            st[a][b]=<span class="literal">true</span>;</span><br><span class="line">            q[++tt]=&#123;a,b&#125;;</span><br><span class="line">            pre[a][b]=t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">PII <span class="title">end</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,<span class="built_in">end</span>.x,<span class="built_in">end</span>.y);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">end</span>.x=n<span class="number">-1</span> &amp;&amp; <span class="built_in">end</span>.y==n<span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">    <span class="built_in">end</span>=pre[<span class="built_in">end</span>.x][<span class="built_in">end</span>.y];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    2.武士风度的牛</p>
+<p>​            马走日字</p>
+<p>​    每一步可以走八个方向： 俩重for 循环</p>
+<p>​    四个方向：dx[4] ={上，右，下，左} dy[4] ={上 ，右 ，下，左}</p>
+<p>3.抓住那头牛</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dist[N];</span><br><span class="line"><span class="keyword">int</span> q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dist[n]=<span class="number">0</span>;</span><br><span class="line">	q[<span class="number">0</span>]=&#123;n&#125;;</span><br><span class="line">	<span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> t=q[hh++];</span><br><span class="line">        <span class="comment">//向前走一步</span></span><br><span class="line">		<span class="keyword">if</span>(t+<span class="number">1</span>&lt;N)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dist[t+<span class="number">1</span>]==<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				q[++tt]=t+<span class="number">1</span>;</span><br><span class="line">				dist[t+<span class="number">1</span>]=dist[t]+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//后退一步</span></span><br><span class="line">		<span class="keyword">if</span>(t<span class="number">-1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dist[t<span class="number">-1</span>]==<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				q[++tt]=t<span class="number">-1</span>;</span><br><span class="line">				dist[t<span class="number">-1</span>]=dist[t]+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//位置翻倍</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="number">2</span>*t &lt;N)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dist[<span class="number">2</span>*t]==<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				q[++tt]=<span class="number">2</span>*t;</span><br><span class="line">				dist[<span class="number">2</span>*t]=dist[t]+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	<span class="built_in">memset</span>(dist,<span class="number">-1</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	bfs(n);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;dist[k]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>多BFS：（求最短距离）</p>
+<p>​    1.矩阵距离</p>
+<p>​    一个n行m列的01矩阵，求这个矩阵当中，每个位置到最近1的距离（曼哈顿距离）。</p>
+<p>特点：</p>
+<p>​    1）1本身全部改成0</p>
+<p>​    2）0全部要求一遍距离</p>
+<p>求每个点到一堆点的最短距离—-&gt;  </p>
+<p>思路：</p>
+<p>1）将本身是1的点全部入队（作为起点）</p>
+<p>2）向外扩展()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII q[N*N];</span><br><span class="line"><span class="keyword">char</span> g[N][N]; <span class="comment">//中间没有空格，要用字符串来读入</span></span><br><span class="line"><span class="keyword">int</span> dist[N][N];</span><br><span class="line"><span class="built_in">memset</span>(dist,<span class="number">-1</span>,<span class="keyword">sizeof</span>  dist);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">         	<span class="keyword">if</span>(g[i][j]==<span class="string">'1'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                q[++tt]=&#123;i,j&#125;;</span><br><span class="line">                dist[i][j]=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a=t.x+dx[i],b=t.y+dy[i];</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">0</span> || a&gt;=n || b&lt;<span class="number">0</span> ||b&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[a][b]!=<span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            dist[a][b]=dist[t.x][t.y]+<span class="number">1</span>;</span><br><span class="line">            q[++tt]=&#123;a,b&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最小步数模型：</p>
+<p>​    1.魔板</p>
+<p>​    一个2*4的魔板（类似模仿），可以进行三种操作</p>
+<p>A：交换上下两行；<br>B：将最右边的一列插入到最左边；<br>C：魔板中央对的4个数作顺时针旋转。</p>
+<p>求出从初始状态–&gt;目标状态最小经过多少步？（要求输出操作的顺序）</p>
+<p>将棋盘的状态当做一个点—–&gt;每一种状态都是一个点。从起点到终点需要多少步？</p>
+<p>问题1：如何把各种状态存下来？  ——&gt;一般用哈希 （map做哈希) (unordered_map),这里用一个字符串存储起来。</p>
+<p>问题2：如何记录方案？   —–&gt; 记录每个状态由哪个状态转换来的</p>
+<p>问题3：如何安照字典序输出？     —&gt;扩展的时候按照ABC的顺序来扩展。</p>
+<p> 2.八数码</p>
+<p>双端队列广搜： 电路维修</p>
+<p>题目特性：</p>
+<p>1）坐标和为奇数的点一定到不了。（因此只能用一半的点）</p>
+<p>2）只包含0和1俩种边权的问题</p>
+<p>思路：</p>
+<p>扩展的时候如果边权为0放在对头，边权为1放在队尾。</p>
+<p>边权为0：俩点之间有路径</p>
+<p>边权为1：俩点之间没有路劲（需要转一下才有路径）</p>
+<p>最短路问题—–&gt;DIjstra（理论基础）</p>
+<p>本题:  每个点可能会入队多次，因为有边权为0存在。</p>
+<p>双向广搜：</p>
+<p>​    1.字串变换</p>
+<p>BFS  ：分成俩类：</p>
+<p>​    1.迷宫问题 </p>
+<p>​    2.最小步数： 八数码</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-六级备考笔记二（作文）">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">六级备考笔记二（作文）</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E8%8B%B1%E8%AF%AD/" class="cube-excerpt-tag-link">#英语</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="时态和语态"><a href="#时态和语态" class="headerlink" title="时态和语态"></a>时态和语态</h4><p>1）10种词性</p>
+<p>2）9种句子成分</p>
+<p>3）8个句型</p>
+<h4 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h4><h4 id="动词的分类"><a href="#动词的分类" class="headerlink" title="动词的分类"></a>动词的分类</h4><ul>
+<li>1）实义动词  ：行为动词（及物动词&amp;不及物动词）</li>
+<li>2）助动词  ：没有含义；帮助动词构成语态，否定句，强调句，疑问句<ul>
+<li>be动词：构词进行时和被动语态   He  is spilling things   I am writing this sentene</li>
+<li>系动词：区分（有没有含义）</li>
+<li>hava :构成现在完成时，完成进行时 ：I  have  read  many books .  jerry has bought a new shirt .</li>
+<li>do  :didn’t（否定句）     did     :   I   do  love  you(强调句)    </li>
+</ul>
+</li>
+<li>3）情态动词 ：不充当动词，但是有语义</li>
+<li>4）系动词<ul>
+<li>be 动词</li>
+<li>感官动词</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>四大语法：<ul>
+<li>1）时态   ：英文一定有时态  —-&gt;中文没有<ul>
+<li>正在进行—&gt;  表将来（马上要发生的将来）</li>
+</ul>
+</li>
+<li>2）语态   ： </li>
+<li>3）非谓语动词</li>
+<li>4）虚拟语气</li>
+</ul>
+</li>
+</ul>
+<p>时态图：</p>
+<p><img src="images/%E5%85%AD%E7%BA%A7.jpg" alt="">    </p>
+<p>最常用的时态轴：大时间，小时态</p>
+<p><img src="images/%E6%97%B6%E6%80%81.jpg" alt=""></p>
+<h4 id="一般现在时：1）现在时段发生的-2）习惯性动作-3）表达客观真理"><a href="#一般现在时：1）现在时段发生的-2）习惯性动作-3）表达客观真理" class="headerlink" title="一般现在时：1）现在时段发生的 2）习惯性动作  3）表达客观真理"></a>一般现在时：1）现在时段发生的 2）习惯性动作  3）表达客观真理</h4><p>1）肯定形式：  第三人称单数“单三” ，其他动词原形</p>
+<p>2）否定形式  ：don’t </p>
+<p>3)    疑问句   ：do  + 主语+</p>
+<h4 id="一般过去时：1）表过去发生的动作"><a href="#一般过去时：1）表过去发生的动作" class="headerlink" title="一般过去时：1）表过去发生的动作"></a>一般过去时：1）表过去发生的动作</h4><p>1）肯定 ：主语+动词过去式</p>
+<p>2）否定 ：主语+did not  +动词原形</p>
+<p>3）疑问 ：疑问词+did  +主语+动词原形</p>
+<p>形式+含义</p>
+<h4 id="一般将来时-：1）动作还未发生，未来发生"><a href="#一般将来时-：1）动作还未发生，未来发生" class="headerlink" title="一般将来时 ：1）动作还未发生，未来发生"></a>一般将来时 ：1）动作还未发生，未来发生</h4><p>1）肯定 ：主语+will +动词原形</p>
+<p>2)否定：主语+won’t  (will not ) +动词原形</p>
+<p>3）疑问：疑问词+will+主语+动词原形</p>
+<h4 id="现在进行：表示动作正在发生"><a href="#现在进行：表示动作正在发生" class="headerlink" title="现在进行：表示动作正在发生"></a>现在进行：表示动作正在发生</h4><p>1）肯定：主语+be动词+动词ing</p>
+<p>2)  否定：主语+be  not +动词ing</p>
+<p>3)疑问 ：疑问词+be +主语+动词ing</p>
+<h4 id="现在完成时：1）动词发生在过去，对现在造成影响"><a href="#现在完成时：1）动词发生在过去，对现在造成影响" class="headerlink" title="现在完成时：1）动词发生在过去，对现在造成影响"></a>现在完成时：1）动词发生在过去，对现在造成影响</h4><p>1）主语+have /has +过去分词</p>
+<p>2）否定 + haven’t +过去分词</p>
+<h4 id="动词的语态：1）主动-：动作的执行者做主语-2）被动-：动作的承受者做主语"><a href="#动词的语态：1）主动-：动作的执行者做主语-2）被动-：动作的承受者做主语" class="headerlink" title="动词的语态：1）主动 ：动作的执行者做主语    2）被动  ：动作的承受者做主语"></a>动词的语态：1）主动 ：动作的执行者做主语    2）被动  ：动作的承受者做主语</h4><ul>
+<li>1）被动语态的定义</li>
+<li>2）主动改被动的步骤<ul>
+<li>1）宾语改成主语</li>
+<li>2）将动词改成 be done </li>
+<li>3)  主语改成by   主语</li>
+</ul>
+</li>
+<li>3）基础时态的被动语态</li>
+<li>4）特殊情况</li>
+</ul>
+<p>基础时态被动：</p>
+<p><img src="images/%E8%A2%AB%E5%8A%A8.jpg" alt=""></p>
+<p><img src="images/%E8%A2%AB%E5%8A%A82.jpg" alt=""></p>
+<p>​    (1)双宾的被动语态：</p>
+<p>​    有俩个被动语态</p>
+<p>​    (2)宾补的被动语态 （只有一个宾语—&gt;只有一个被动句）</p>
+<p>​    </p>
+<p>​    </p>
+<ul>
+<li>三大从句 ：长句才能得高分</li>
+</ul>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-Vim编辑器的详细教程">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Vim编辑器的详细教程</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="Vim编辑器的详细教程"><a href="#Vim编辑器的详细教程" class="headerlink" title="Vim编辑器的详细教程"></a>Vim编辑器的详细教程</h4><p>vim编辑器：</p>
+<p>​    文本编辑器：</p>
+<p>​        文本：纯文本信息，ASCII text ,不能有任何修饰信息（颜色，字体，大小）</p>
+<p>​        支持：ASCII码（纯英文），UNICODE（全球统一编码）； GBK（中文编码）</p>
+<p>​        </p>
+<p>文本编辑器分类：</p>
+<p>​    行编辑器：sed</p>
+<p>​    全屏编辑器：vi,nano ,vim  </p>
+<p>​    单词：Visual  interface ;   Vi  improved </p>
+<p>vim：模式化的编辑器（在不同模式下：按键的功能不一样）</p>
+<p>​    基本模式：</p>
+<p>​            1）编辑模式 ：</p>
+<p>​            2）输入模式 ：</p>
+<p>​            3）末行模式（内置的命令行接口）：</p>
+<p>​        关闭保存：俩个大小的Z</p>
+<p>​    vim  [OPTION]  file </p>
+<p>​    +#  :打开文件后，直接让光标处于第#行行首</p>
+<p>​    +/pattern:打开文件后，直接让光标处于第一个被pattern匹配到的行的行首 </p>
+<p>​    模式转换：</p>
+<p>​        1）编辑模式（默认模式）：–&gt; 进入输入模式     </p>
+<ul>
+<li>i:  insert(在光标所在处输入)   </li>
+<li>a :append （光标所在处后方输入）  </li>
+<li>o  :在光标所在处下方打开新的行        </li>
+<li>I：（大写i)   :在光标所在行的行首输入</li>
+<li>A ：在光标所在行行尾输入</li>
+<li>O ：在光标所在行的上方打开新的一行</li>
+</ul>
+<p>​        2）输入模式：插入数据   –&gt; 编辑模式   </p>
+<ul>
+<li>ESC键</li>
+</ul>
+<p>​        3）末行模式  （非常强大的内置命令行接口）</p>
+<ul>
+<li>编辑模式—&gt;末行模式    输入冒号：</li>
+<li>可以输入指令进行一些操作（支持许多负咋操作）</li>
+<li>末行–&gt;编辑模式  ：ESC</li>
+</ul>
+<p>关闭文件：</p>
+<p>​            ZZ ：保存并退出 （编辑模式下）</p>
+<p>​            :q  退出  （末行模式下） </p>
+<p>​            :wq  保存修改并退出</p>
+<p>​            : x  保存并退出</p>
+<p>​            : w /path/to/somefile  (将修改保存到另外的文件中)</p>
+<p>光标跳转：</p>
+<p>​        字符间跳转 ：前面还可以加数字（代表跳几格）</p>
+<p>​                h: 向左跳一个字符</p>
+<p>​                l :向右跳一个字符</p>
+<p>​                j:向下跳转</p>
+<p>​                k :向上跳转</p>
+<p>​        单词间跳转</p>
+<p>​                w :下一个单词的词首</p>
+<p>​                b :当前或前一个单词的词首</p>
+<p>​                e :当前或后一个单词词尾</p>
+<p>​        行首行尾跳转</p>
+<p>​                ^ ：跳转到行首的第一个非空字符</p>
+<p>​                0：跳转到绝对行首</p>
+<p>​                &amp; ：跳转到绝对行尾</p>
+<p>​        行间跳转</p>
+<p>​                #G： 跳转至第#行行首</p>
+<p>​                1G,gg :跳转到行首</p>
+<p>​                G  ：跳转到行尾</p>
+<p>​        句间跳转：</p>
+<p>​            ）</p>
+<p>​           （</p>
+<p>​        段间跳转：</p>
+<p>​            }</p>
+<p>​            {</p>
+<p>翻屏：</p>
+<p>​    Ctrl+f  :向文件尾部翻一屏</p>
+<p>​    Ctrl+b :向文件首部翻一屏</p>
+<p>​    Ctrl+d :向文件尾部翻半屏</p>
+<p>​    Ctrl+u :向文件首部翻半屏</p>
+<p>​    k ,j  ：上下一行行的翻</p>
+<p>​    </p>
+<p>vim的编辑命令：</p>
+<p>​    字符编辑：</p>
+<p>​            x:  删除光标所在处的字符</p>
+<p>​            #x :删除光标所在处起始的#个字符</p>
+<p>​            xp: 交换光标所在处字符和其后面字符的位置</p>
+<p>​    替换命令</p>
+<p>​            r :替换光标所在处的字符 ，后面再加个字符</p>
+<p>​    删除命令</p>
+<p>​            x :</p>
+<p>​            d :删除命令，可结合光标跳转字符，实现范围删除</p>
+<p>​            d$ :删除当前到行尾</p>
+<p>​            d^: 删除当前到行首</p>
+<p>​            dw :删除一个单词</p>
+<p>​            de:</p>
+<p>​            db: </p>
+<p>​            dd :删除一行      </p>
+<p>​    都支持在加个数字 #dd  :删除光标所在行其实的供#行（删除的内容都会在缓冲器中–》可以粘贴）</p>
+<p>​    粘贴命令：</p>
+<p>​            p: 缓冲器中的内容如果为整行，则粘贴在当前光标所在行的下方，否则粘贴在光标后方</p>
+<p>​            P: 刚好相反（  上方，前方）</p>
+<p>​    复制命令（yank, y)：</p>
+<p>​            y : 复制，工作行为相似于d 命令</p>
+<p>​            y$ :</p>
+<p>​            y^:</p>
+<p>​            ye :</p>
+<p>​            yy :复制一整行</p>
+<p>​            yw :复制一个单词</p>
+<p>​    改变命令（change,c) :</p>
+<p>​            编辑模式—&gt; 输入模式 ； 实现删除操作</p>
+<p>​            cc  :删除一行，且转换成插入操作        </p>
+<p>​            其他的用法和d 一样</p>
+<p>​    可视化模式：</p>
+<p>​            v :  按字符选定 </p>
+<p>​            V  :按行选定    </p>
+<p>​            结合编辑命令：  d   c  y  p</p>
+<p>​    撤销操作：</p>
+<p>​            u : 撤销此前的操作（一般可保持50个） </p>
+<p>​            可结合数字使用</p>
+<p>​    撤销撤销操作：</p>
+<p>​            Ctrl+r  :恢复此前的撤销操作</p>
+<p>​    重复执行前一个编辑操作：</p>
+<p>​            .  （点号）：</p>
+<p>​    vim 自带的练习教程： vimtutor </p>
+<p>vim末行模式：  （内建的 命令行接口）</p>
+<p>​    编辑模式–&gt;末行模式  ：</p>
+<p>​    （1）：地址定界</p>
+<p>​            指明 :start_pos[,end_pos]</p>
+<p>​            #:  特定的第#行，例如5 第5行</p>
+<p>​            . :当前行    </p>
+<p>​            $:最后一行   </p>
+<p>​            #，#：指定行范围，左侧起始，右侧结束</p>
+<p>​            #，+# : 指定行范围，左侧起始，右侧相对偏移量 3,+7 </p>
+<p>​            1,$ :全文</p>
+<p>​            % ：全文</p>
+<p>​            /pattern/  :第一次被模式匹配到的行</p>
+<p>​    （2）</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-hexo博客安装">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">hexo博客安装</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/hexo/" class="cube-excerpt-tag-link">#hexo</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>1.安装指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>2.将博客生成静态站点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo   g</span><br></pre></td></tr></table></figure>
+
+<p>3 .生成的public文件夹就自己当成静态网站进行部署</p>
+<p>hexo  server:启动服务</p>
+<p>4.自定义主题（网址）：</p>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;ZEROKISEKI&#x2F;hexo-theme-cube.git themes&#x2F;cube --depth 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
+
+<p>5.图床（图片处理） ：七牛云</p>
+<p>6）评论系统：</p>
+<ul>
+<li>disqus</li>
+<li>来必力</li>
+</ul>
+<p>7）搜索：  swiftype 网站</p>
+<h4 id="npm换源："><a href="#npm换源：" class="headerlink" title="npm换源："></a>npm换源：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>8）访问量的来源统计：</p>
+<p>友盟：</p>
+<p>CNZZ</p>
+<p>百度</p>
+<p>9）上传到github：</p>
+<ul>
+<li>为 Hexo 安装 Git 插件<br>安装 hexo-deployer-git，否则会报 ERROR Deployer not found: git 的错误。<br><code>npm install hexo-deployer-git --save</code></li>
+<li>生成静态文件和部署：<br><code>hexo g &amp; d</code></li>
+</ul>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-hexo添加评论功能-Gitment评论系统">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">hexo添加评论功能-Gitment评论系统</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/Gitment/" class="cube-excerpt-tag-link">#Gitment</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>第一步：注册 OAuth Application</p>
+<ol>
+<li><p>登录 Github。</p>
+</li>
+<li><p>前往 <a href="https://github.com/settings/profile" target="_blank" rel="noopener">https://github.com/settings/profile</a></p>
+</li>
+<li><p>点击左侧下方的 <code>Developer settings</code></p>
+</li>
+<li><p>点击绿色 <code>Register a new application</code></p>
+</li>
+<li><p>填写以下内容：</p>
+</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Application name：Gitment</span><br><span class="line">Homepage URL：https:&#x2F;&#x2F;ryanluoxu.github.io&#x2F;</span><br><span class="line">Application description：Blog comment system</span><br><span class="line">Authorization callback URL：https:&#x2F;&#x2F;ryanluoxu.github.io&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>点击 Register application</p>
+</li>
+<li><p>得到：</p>
+<p>Client ID:</p>
+<p>Client Secret:</p>
+<p>第二步：创建存放 gitment-comments 的 repository</p>
+<p>打开 D:\blog\themes\next_config.yml<br>找到 Gitment<br>如下修改：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  enable: true</span><br><span class="line">  mint: true 		# RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway</span><br><span class="line">  count: true 		# Show comments count in post meta area</span><br><span class="line">  lazy: false 		# Comments lazy loading with a button</span><br><span class="line">  cleanly: false 	# Hide &#39;Powered by ...&#39; on footer, and more</span><br><span class="line">  language: 		# Force language, or auto switch by theme</span><br><span class="line">  github_user: ryanluoxu 	# 此处 - Your Github ID</span><br><span class="line">  github_repo: gitment-comments # 此处注意 - The repo you use to store Gitment comments</span><br><span class="line">  client_id: xxxxxxxxxxxxxxxxxx # 此处 - Github client id for the Gitment</span><br><span class="line">  client_secret: xxxxxxxxxxxxx # 此处 - Github access secret token for the Gitment</span><br><span class="line">  proxy_gateway: # Address of api proxy, See: https:&#x2F;&#x2F;github.com&#x2F;aimingoo&#x2F;intersect</span><br><span class="line">  redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled</span><br></pre></td></tr></table></figure>
+
+<p>最后:之后生成并且部署才会生效，本地有时没有效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>之后文章底部会出现 <code>初始化本文的评论页</code>，点击初始化。</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-Hello World">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/hello-world/">Hello World</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/hello-world/">Read More</a>
+    </footer>
+</div>
+
+
+
+<ul class="cube-pagination cube-pagination-6">
+    
+    <li class="cube-pagination-prev disabled">
+        <span>« Prev</span>
+    </li>
+    
+    
+        
+            
+            <li class="cube-pagination-index disabled">
+                <span>1</span>
+            </li>
+            
+        
+    
+
+    
+    <li class="cube-pagination-next disabled">
+        <span>Next »</span>
+    </li>
+    
+</ul>
+
+<!--其他组件后续添加-->
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="Search" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="Search" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>csm</span>
+    
+    
+    <a title="一名计算机专业的学生">一名计算机专业的学生</a>
+    
+    <div class="count">
+        <a class="count articles"><span>9</span>Article</a>
+        <a class="count tags"><span>6</span>Tags</a>
+        <a class="count categories"><span>3</span>Categories</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: 'Open Lyrics',
+            close: 'Close Lyrics'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>Recent Posts</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/" title="最短路问题总结">最短路问题总结</a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/" title="英语六级备考笔记">英语六级备考笔记</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/" title="习题总结">习题总结</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/" title="习题总结">习题总结</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/" title="六级备考笔记二（作文）">六级备考笔记二（作文）</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-categories cube-sidebar" id="cube-categories">
+    <div class="title">
+        <a href="/categories">Categories</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E6%8A%80%E6%9C%AF/">#技术</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E7%AE%97%E6%B3%95/">#算法</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/categories/%E8%8B%B1%E8%AF%AD/">#英语</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">Tagcloud</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/hexo/">#hexo</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/Gitment/">#Gitment</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E8%8B%B1%E8%AF%AD/">#英语</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%AE%97%E6%B3%95-%E6%90%9C%E7%B4%A2-BFS/">#算法 搜索  BFS</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E7%9F%AD%E8%B7%AF/">#算法 最短路</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/ZEROKISEKI" target="_blank">GitHub</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/Coding.png">
+            
+            <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/SF.png">
+            
+            <a href="https://segmentfault.com/u/aonosora" target="_blank">SF社区</a>
+        </li>
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/开发者头条.png">
+            
+            <a href="https://toutiao.io/u/148070" target="_blank">开发者头条</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>Friend Links</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://blog.micblo.com/" target="_blank">罗大佬</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg">
+            <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://aonosora.com/" target="_blank">咪西西の部落格</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 csm
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+</body>
+</html>
