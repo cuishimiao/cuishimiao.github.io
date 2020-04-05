@@ -12,7 +12,7 @@
     
     
     
-    <title>Categories: 英语 | csm&#39;s blog</title>
+    <title>最短路问题总结 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,33 +162,98 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">最短路问题总结</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">英语</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/">英语六级备考笔记</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">六级备考笔记二（作文）</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-05
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E7%9F%AD%E8%B7%AF/">#算法 最短路</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h4 id="最短路问题分类"><a href="#最短路问题分类" class="headerlink" title="最短路问题分类"></a>最短路问题分类</h4><p>1）单源最短路<br>2）多源最短路（不止一个起点）</p>
+<p><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/NWsIMXrlhEMs.png?imageslim" alt="mark"></p>
+<p>稠密图： 朴素版Dijstra  O(n^2)    数据结构：邻接矩阵<br>稀疏图： 堆优化版Dijstra O(mlogn) 存储结构：邻接表</p>
+<p>考察点：<br>1）建图 ：将题目抽象成最短路问题</p>
+<p>2）Dijstra：基于贪心</p>
+<p>朴素版Dijstra：<br>算法步骤：<br>1）初始化距离 ：memset(dist,0x3f,sizeof dist)<br>                dist[1]=0;</p>
+<p>集合s :存放当前已经确定最短距离的点<br>2) for i: n<br>     t&lt;-找到不在s中的距离最近的点<br>     s&lt;-<br>     用t 来更新其他所有点的距离<br>    for(从t出去的所有点)<br>    判断是否 dist(x) &gt;dist[t]+w<br>    更新</p>
+<p><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/N5FXn3ND2yW9.png?imageslim" alt="mark"></p>
+<p>重边和自环的处理：<br>1）最短路不会用到重边<br>2）自环只需要取最短的那条</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dijstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">    </span><br><span class="line">    dist[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t=<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">//每次迭代的过程中我们都先找到当前未确定的最短距离的点中距离最短的点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            <span class="keyword">if</span>(!st[j] &amp;&amp; (t==<span class="number">-1</span> || dist[t]&gt;dist[j]))</span><br><span class="line">             t=j;</span><br><span class="line">        <span class="comment">//更新最短距离的点到其他点的距离</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">            dist[j]=<span class="built_in">min</span>(dist[j],dist[t]+g[t][j]);</span><br><span class="line">        st[t]=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dist[n]==<span class="number">0x3f3f3f3f</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dist[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>堆优化的Dijstra：稀疏图</p>
+<p>在堆中修改一个数：logn </p>
+<p>堆：1）优先队列<br>    2）手写堆</p>
+<p>#include <queue></p>
+<p>typedef pair&lt;int,int&gt; PII ;//存距离 存第几个点</p>
+<p>priority_queue&lt;PII,vector<PII>,greater<PII>&gt; heap; //小根堆</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dijstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">    dist[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    priority_queue&lt;PII,<span class="built_in">vector</span>&lt;PII&gt;,greater&lt;PII&gt;&gt; heap;</span><br><span class="line">    heap.push(&#123;<span class="number">0</span>,<span class="number">1</span>&#125;); <span class="comment">//第一维是距离，第二维是节点</span></span><br><span class="line">    <span class="keyword">while</span>(heap.<span class="built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//获取最短节点</span></span><br><span class="line">        <span class="keyword">auto</span> t=heap.top();</span><br><span class="line">        heap.pop();</span><br><span class="line">        <span class="keyword">int</span> ver=t.second,distance=t.first;</span><br><span class="line">        <span class="keyword">if</span>(st[ver]) <span class="keyword">continue</span>; <span class="comment">//去备份除垄余节点</span></span><br><span class="line">        </span><br><span class="line">        st[ver]=<span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//更新其他节点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=h[ver];i!=<span class="number">-1</span>;i=ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j=e[i];</span><br><span class="line">            <span class="keyword">if</span>(dist[j]&gt;distance+w[i])</span><br><span class="line">                dist[j]=distance+w[i];</span><br><span class="line">                </span><br><span class="line">            heap.push(&#123;dist[j],j&#125;);</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dist[n]==<span class="number">0x3f3f3f3f</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> dist[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>Bellman-Ford算法</p>
+<p>步骤：<br>    for  n 次       //迭代了k次，从1号点经过不超过k条边的最短路的距离<br>                    //+备份 ,保证每次遍历一条边都用上次的结果，防止串联<br>        for  所有边a,b,w  a—&gt;b (w)<br>            dist[b]=min(dist[b],dist[a]+w)<br>    图示：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/J23MUJcatUIW.png?imageslim" alt="mark"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bellman_ford</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dist);</span><br><span class="line"></span><br><span class="line">    dist[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i ++ ) <span class="comment">//每次一条边</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memcpy</span>(last, dist, <span class="keyword">sizeof</span> dist); <span class="comment">//备份</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span>  a = edges[j].a,b=edges[j].b,c=edges[j].c;</span><br><span class="line">            dist[b] = <span class="built_in">min</span>(dist[b], last[a] + c);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>循环完成后对于每个点都满足： dist[b]&lt;=dist[a]+w;</p>
+<p>如果有负权回路—&gt; 最短路径是不一定存在的。<br>Bellman-Ford算法可以求是否有负权变的。 如果遍历到第n次，还有更新—&gt;说明遍历了n条边（存在负权）。</p>
+<p>SPFV算法：要求不能有负环</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/">
+                英语六级备考笔记
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+    <!-- 因为gitment里面也有gitment-container，所以这里就改为gitment-comment -->
+<div class="gitment-comment">
+    <div id="container"></div>
+</div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+
+<script>
+    var gitment = new Gitment({
+        // id default is location.href
+        owner: 'cuishimiao',
+        repo: 'gitment-comments',
+        oauth: {
+            client_id: '1cba83d10d7d1147ba5a',
+            client_secret: '6e044b1e9b2287c4174dbc303b0837d2eab4ba4e',
+        },
+    })
+    gitment.render('container')
+</script>
+    
+
+
         </div>
         <div class="cube-right">
             
@@ -343,7 +408,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
@@ -379,12 +444,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E8%8B%B1%E8%AF%AD/">#英语</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E6%90%9C%E7%B4%A2-BFS/">#算法 搜索  BFS</a>
         </div>
         
