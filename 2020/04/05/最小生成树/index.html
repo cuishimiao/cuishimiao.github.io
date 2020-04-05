@@ -12,7 +12,7 @@
     
     
     
-    <title>Tags: 算法 | csm&#39;s blog</title>
+    <title>最小生成树 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,29 +162,69 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">最小生成树</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">算法</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">习题总结</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-05
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E5%9B%BE%E8%AE%BA/">#算法 最小生成树   图论</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h4 id="最小生成树—-gt-无向图"><a href="#最小生成树—-gt-无向图" class="headerlink" title="最小生成树—&gt;无向图"></a>最小生成树—&gt;无向图</h4><p>常见的用法<br>1）稠密图 —&gt; Prim算法朴素版<br>2）稀疏图 —&gt;  Kruskal算法</p>
+<p>二分图：<br>1）染色法  —&gt;判断是否是二分图 O(n+m)<br>2）匈牙利算法   —&gt;求最大匹配  O(mn)  实际运用效果非常好</p>
+<p>3）最大流问题<br>大纲：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/NeFPChevbuCq.png?imageslim" alt="mark"></p>
+<h5 id="朴素版Prim算法-（核心：算法流程）"><a href="#朴素版Prim算法-（核心：算法流程）" class="headerlink" title="朴素版Prim算法 （核心：算法流程）"></a>朴素版Prim算法 （核心：算法流程）</h5><p>1）初始化距离  dist[i]&lt;–0x3f</p>
+<p>算法流程：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/Y6kmXtUBg83k.png?imageslim" alt="mark"></p>
+<p>最小生成树解决的问题：<br>1）最小连通距离<br>2）相当于去除垄余的边，每个点保留一条最短边</p>
+<p>最小生成树不会有环：边权正负均可以</p>
+<p>注意：先累加，再更新  （如果有自环，更新之后，自己会变小）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">prim</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dist, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dist);</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">//寻找不在队中最小的点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j ++ )</span><br><span class="line">            <span class="keyword">if</span> (!st[j] &amp;&amp; (t == <span class="number">-1</span> || dist[t] &gt; dist[j]))</span><br><span class="line">                t = j;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (i &amp;&amp; dist[t] == INF) <span class="keyword">return</span> INF;</span><br><span class="line">        <span class="keyword">if</span> (i) res += dist[t];</span><br><span class="line">        st[t] = <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">//更新其他点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j ++ ) dist[j] = <span class="built_in">min</span>(dist[j], g[t][j]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Kruskal算法-效果非常好，很快"><a href="#Kruskal算法-效果非常好，很快" class="headerlink" title="Kruskal算法:  效果非常好，很快"></a>Kruskal算法:  效果非常好，很快</h4><p>算法描述：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/jdhHi3R0rzY0.png?imageslim" alt="mark"></p>
+<p>并查集： O(1)<br>1）在a,b之间加一条边<br>2）判断是否连通</p>
+<p>特点：只需要开个结构体存储边就可以了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a,b,w;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt; (<span class="keyword">const</span> Edge &amp;W)<span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> w &lt; W.w;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;Edges[M];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p[x]!=x) p[x]=<span class="built_in">find</span>(p[x]);</span><br><span class="line">    <span class="keyword">return</span> p[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">kruskal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    sort(Edges,Edges+m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) p[i]=i;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>,cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> a=Edges[i].a,b=Edges[i].b,w=Edges[i].w;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">find</span>(a)!=<span class="built_in">find</span>(b))</span><br><span class="line">        &#123;</span><br><span class="line">            p[<span class="built_in">find</span>(a)]=<span class="built_in">find</span>(b);</span><br><span class="line">            res+=w;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(cnt&lt;n<span class="number">-1</span>) <span class="keyword">return</span> INF;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                二分图
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/">
+                最短路问题总结
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
         </div>
         <div class="cube-right">
             

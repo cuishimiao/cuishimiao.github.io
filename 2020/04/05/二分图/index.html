@@ -12,7 +12,7 @@
     
     
     
-    <title>Tags: 算法 | csm&#39;s blog</title>
+    <title>二分图 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -162,29 +162,58 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">二分图</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">算法</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">习题总结</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-05
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E5%9B%BE-%E5%9B%BE%E8%AE%BA/">#算法 二分图   图论</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <p>二分图：<br>1）染色法  —&gt;判断是否是二分图 O(n+m)<br>2）匈牙利算法   —&gt;求最大匹配  O(mn)  实际运用效果非常好</p>
+<p>大纲：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/NeFPChevbuCq.png?imageslim" alt="mark"></p>
+<h5 id="染色法—-gt-判断一个图是否是二分图"><a href="#染色法—-gt-判断一个图是否是二分图" class="headerlink" title="染色法—-&gt;判断一个图是否是二分图"></a>染色法—-&gt;判断一个图是否是二分图</h5><p>性质：一个图是二分图《===》当且仅当图中不含奇数环</p>
+<p>染色法：如果一个图在染色的过程中，没有矛盾，就是一个二分图</p>
+<p>算法步骤：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/GYPqBFE2Qv5h.png?imageslim" alt="mark"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    color[u]=c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=h[u];i!=<span class="number">-1</span>;i=ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> j=e[i];</span><br><span class="line">        <span class="keyword">if</span>(!color[j])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!dfs(j,<span class="number">3</span>-c)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(color[j]==c) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>匈牙利算法：</p>
+<p>求最大成功匹配：</p>
+<p>演示：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200405/U3MbOiiuYKFD.png?imageslim" alt="mark"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bool find(int x)</span><br><span class="line">&#123;</span><br><span class="line">    for(int i&#x3D;h[x];i!&#x3D;-1;i&#x3D;ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        int j&#x3D;e[i];</span><br><span class="line">        if(st[j]) continue;</span><br><span class="line">        </span><br><span class="line">        st[j]&#x3D;true;</span><br><span class="line">        if(!match[j] || find(match[j]))</span><br><span class="line">        &#123;</span><br><span class="line">            match[j]&#x3D;x;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2020/04/05/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
+                最小生成树
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
         </div>
         <div class="cube-right">
             
@@ -334,7 +363,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%8A%80%E6%9C%AF/">#技术</a>
         </div>
         
@@ -360,12 +389,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/hexo/">#hexo</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Gitment/">#Gitment</a>
         </div>
         
@@ -395,7 +424,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E5%9B%BE-%E5%9B%BE%E8%AE%BA/">#算法 二分图   图论</a>
         </div>
         
