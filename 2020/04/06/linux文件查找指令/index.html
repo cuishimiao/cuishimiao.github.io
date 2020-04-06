@@ -12,7 +12,7 @@
     
     
     
-    <title>Categories: 算法 | csm&#39;s blog</title>
+    <title>linux文件查找命令 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -173,53 +173,76 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">linux文件查找命令</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">算法</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/04/06/%E8%B4%AA%E5%BF%83%E4%BA%8C/">贪心</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/06/%E8%B4%AA%E5%BF%83/">贪心</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/05/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/">最短路问题总结</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">习题总结</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">习题总结</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-06
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/shell-linux/">#shell linux</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h5 id="文件查找常用工具：locate-find"><a href="#文件查找常用工具：locate-find" class="headerlink" title="文件查找常用工具：locate  find"></a>文件查找常用工具：locate  find</h5><p>locate : 依赖于事先构建的索引库<br>    系统自动实现(周期性任务)<br>    手动更新数据库（updatedb)</p>
+<pre><code>工作特性：
+    查找速度快
+    模糊查找
+    非实时性任务
+使用方法：</code></pre><p>find  :实时查找工具，通过遍历指定起始路径下文件系统层级结构完成文件查找</p>
+<pre><code>工作特性：
+精确查找
+实时查找
+
+find用法： find - search for files in a directory hierarchy
+
+find [OPTIONS]  [查找起始路径路径] [查找条件] 【处理动作]
+查找路径： 指定具体目标搜索起始路径，默认当前目录
+查找条件： 根据文件名查找，文件大小查找 ，默认找出指定路径下的所有文件
+处理动作： 对符合条件的文件作出的操作，例如删除
+
+查找条件： 
+    表达式：选项和测试
+
+    测试：
+        根据文件名查找 ： -name  -iname(不区分大小写)</code></pre>
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2020/04/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%BD%B1%E8%A7%86%E7%BD%91%E7%AB%99/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                如何搭建自己的影视网站
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2020/04/06/%E8%B4%AA%E5%BF%83%E4%BA%8C/">
+                贪心
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
         </div>
         <div class="cube-right">
             
@@ -369,7 +392,7 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E6%8A%80%E6%9C%AF/">#技术</a>
         </div>
         
@@ -395,17 +418,17 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/hexo/">#hexo</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Gitment/">#Gitment</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
@@ -455,7 +478,7 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Vim-linux/">#Vim  linux</a>
         </div>
         

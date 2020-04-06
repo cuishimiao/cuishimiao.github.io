@@ -174,6 +174,366 @@
     <div class="cube-content">
         <div class="cube-left">
             
+<div class="cube-excerpt" id="cube-excerpt-习题总结">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">习题总结</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95-%E6%90%9C%E7%B4%A2-BFS/" class="cube-excerpt-tag-link">#算法 搜索  BFS</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="搜索题目总结（侧重写代码）"><a href="#搜索题目总结（侧重写代码）" class="headerlink" title="搜索题目总结（侧重写代码）"></a>搜索题目总结（侧重写代码）</h4><p>Flood FIll:（洪水填充法） ：可以在线性时间复杂度内，找到某个点所在的连通块。</p>
+<p>​    1.池塘计数   (找连通块)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">	坐标的问题，有俩维：</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII ;</span><br><span class="line"></span><br><span class="line">PII  q[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"><span class="keyword">char</span> g[N][N];</span><br><span class="line"></span><br><span class="line"><span class="comment">//找连通块</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">auto</span> t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=t.x<span class="number">-1</span>;i&lt;=t.x+<span class="number">1</span>;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=t.y<span class="number">-1</span>;j&lt;=t.y+<span class="number">1</span>;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(t.x==i &amp;&amp; t.y==j) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(i&lt;<span class="number">0</span> || i&gt;=n || j&lt;<span class="number">0</span> || j&gt;=m) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(g[i][j]==<span class="string">'.'</span> || st[i][j]) continnue;</span><br><span class="line">               </span><br><span class="line">                st[i][j]=<span class="literal">true</span>;</span><br><span class="line">                q[++tt]=&#123;i,j&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    2.城堡问题 (墙 是二进制的表示)   ：统计一片连通区的面积</p>
+<p>​        1）.求连通块的个数，</p>
+<p>​        2）.求最大的连通块</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> g[N][N];</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII q[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> area=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> dx[<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>&#125;; <span class="comment">//向四个方向扩展</span></span><br><span class="line">    <span class="keyword">int</span> dy[<span class="number">4</span>]=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="keyword">auto</span> t=q[hh++];</span><br><span class="line">        area++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">			<span class="keyword">int</span> a=t.x+dx[i],b=t.y+dy[i];</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">0</span> || a&gt;=n || b&lt;<span class="number">0</span> || b&gt;=m) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(st[a][b] ) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(g[i][j]&gt;&gt;i &amp;<span class="number">1</span>) <span class="keyword">continue</span>; <span class="comment">//如果有墙，则跳过</span></span><br><span class="line">            st[a][b]=<span class="literal">true</span>;</span><br><span class="line">            q[++tt]=&#123;a,b&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    3.山峰和山谷    ：统计联通区和周围的关系</p>
+<p>​        1）如果周围没有比它高的—&gt;山峰</p>
+<p>​        2）如果周围没有比它矮的—-&gt;山谷</p>
+<p>​    所有Flood Fill的时候，统一一下，周围是否有比它高的，比它矮的：</p>
+<p>​    模型： </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span> &gt; PII;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> h[N][N];</span><br><span class="line">PII q[N*N];</span><br><span class="line"><span class="keyword">bool</span> st[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy,<span class="keyword">bool</span> has_higher,<span class="keyword">bool</span> has_lower)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    st[sx][sy]=<span class="number">0</span>;</span><br><span class="line">    st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">        PII t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=t.x<span class="number">-1</span>;i&lt;=t.x+<span class="number">1</span>;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=t.y<span class="number">-1</span>;j&lt;=t.y+<span class="number">1</span>;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i&lt;<span class="number">0</span> || i&gt;=n || j&lt;<span class="number">0</span> || j&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span>(h[i][j]!=h[t.x][t.y])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(h[i][j]&lt;h[t.x][t.y]) has_lower=<span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">else</span> has_higher=<span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                st[i][j]=<span class="literal">true</span>;</span><br><span class="line">                q[++tt]=&#123;i,j&#125;;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最短路模型：</p>
+<p>​    1.迷宫问题</p>
+<p>​    1）求最短路径</p>
+<p>​    2）记录路径：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII pre[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> sx,<span class="keyword">int</span> sy)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pre[sx][sy]=&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    st[sx][sy]=<span class="literal">true</span>;</span><br><span class="line">    q[<span class="number">0</span>]=&#123;sx,sy&#125;;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">        PII t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a=dx[i]+t.x,b=dy[i]+t.y;</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">0</span> || a&gt;=n || b&lt;<span class="number">0</span> ||b&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(st[a][b] || g[a][b]==<span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            st[a][b]=<span class="literal">true</span>;</span><br><span class="line">            q[++tt]=&#123;a,b&#125;;</span><br><span class="line">            pre[a][b]=t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">PII <span class="title">end</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d"</span>,<span class="built_in">end</span>.x,<span class="built_in">end</span>.y);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">end</span>.x=n<span class="number">-1</span> &amp;&amp; <span class="built_in">end</span>.y==n<span class="number">-1</span>) <span class="keyword">break</span>;</span><br><span class="line">    <span class="built_in">end</span>=pre[<span class="built_in">end</span>.x][<span class="built_in">end</span>.y];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    2.武士风度的牛</p>
+<p>​            马走日字</p>
+<p>​    每一步可以走八个方向： 俩重for 循环</p>
+<p>​    四个方向：dx[4] ={上，右，下，左} dy[4] ={上 ，右 ，下，左}</p>
+<p>3.抓住那头牛</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dist[N];</span><br><span class="line"><span class="keyword">int</span> q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dist[n]=<span class="number">0</span>;</span><br><span class="line">	q[<span class="number">0</span>]=&#123;n&#125;;</span><br><span class="line">	<span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> t=q[hh++];</span><br><span class="line">        <span class="comment">//向前走一步</span></span><br><span class="line">		<span class="keyword">if</span>(t+<span class="number">1</span>&lt;N)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dist[t+<span class="number">1</span>]==<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				q[++tt]=t+<span class="number">1</span>;</span><br><span class="line">				dist[t+<span class="number">1</span>]=dist[t]+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//后退一步</span></span><br><span class="line">		<span class="keyword">if</span>(t<span class="number">-1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dist[t<span class="number">-1</span>]==<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				q[++tt]=t<span class="number">-1</span>;</span><br><span class="line">				dist[t<span class="number">-1</span>]=dist[t]+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="comment">//位置翻倍</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="number">2</span>*t &lt;N)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dist[<span class="number">2</span>*t]==<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				q[++tt]=<span class="number">2</span>*t;</span><br><span class="line">				dist[<span class="number">2</span>*t]=dist[t]+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	<span class="built_in">memset</span>(dist,<span class="number">-1</span>,<span class="keyword">sizeof</span> dist);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	bfs(n);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;dist[k]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>多BFS：（求最短距离）</p>
+<p>​    1.矩阵距离</p>
+<p>​    一个n行m列的01矩阵，求这个矩阵当中，每个位置到最近1的距离（曼哈顿距离）。</p>
+<p>特点：</p>
+<p>​    1）1本身全部改成0</p>
+<p>​    2）0全部要求一遍距离</p>
+<p>求每个点到一堆点的最短距离—-&gt;  </p>
+<p>思路：</p>
+<p>1）将本身是1的点全部入队（作为起点）</p>
+<p>2）向外扩展()</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII q[N*N];</span><br><span class="line"><span class="keyword">char</span> g[N][N]; <span class="comment">//中间没有空格，要用字符串来读入</span></span><br><span class="line"><span class="keyword">int</span> dist[N][N];</span><br><span class="line"><span class="built_in">memset</span>(dist,<span class="number">-1</span>,<span class="keyword">sizeof</span>  dist);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> hh=<span class="number">0</span>,tt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">        &#123;</span><br><span class="line">         	<span class="keyword">if</span>(g[i][j]==<span class="string">'1'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                q[++tt]=&#123;i,j&#125;;</span><br><span class="line">                dist[i][j]=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">while</span>(hh&lt;=tt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> t=q[hh++];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a=t.x+dx[i],b=t.y+dy[i];</span><br><span class="line">            <span class="keyword">if</span>(a&lt;<span class="number">0</span> || a&gt;=n || b&lt;<span class="number">0</span> ||b&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(dist[a][b]!=<span class="number">-1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            </span><br><span class="line">            dist[a][b]=dist[t.x][t.y]+<span class="number">1</span>;</span><br><span class="line">            q[++tt]=&#123;a,b&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>最小步数模型：</p>
+<p>​    1.魔板</p>
+<p>​    一个2*4的魔板（类似模仿），可以进行三种操作</p>
+<p>A：交换上下两行；<br>B：将最右边的一列插入到最左边；<br>C：魔板中央对的4个数作顺时针旋转。</p>
+<p>求出从初始状态–&gt;目标状态最小经过多少步？（要求输出操作的顺序）</p>
+<p>将棋盘的状态当做一个点—–&gt;每一种状态都是一个点。从起点到终点需要多少步？</p>
+<p>问题1：如何把各种状态存下来？  ——&gt;一般用哈希 （map做哈希) (unordered_map),这里用一个字符串存储起来。</p>
+<p>问题2：如何记录方案？   —–&gt; 记录每个状态由哪个状态转换来的</p>
+<p>问题3：如何安照字典序输出？     —&gt;扩展的时候按照ABC的顺序来扩展。</p>
+<p> 2.八数码</p>
+<p>双端队列广搜： 电路维修</p>
+<p>题目特性：</p>
+<p>1）坐标和为奇数的点一定到不了。（因此只能用一半的点）</p>
+<p>2）只包含0和1俩种边权的问题</p>
+<p>思路：</p>
+<p>扩展的时候如果边权为0放在对头，边权为1放在队尾。</p>
+<p>边权为0：俩点之间有路径</p>
+<p>边权为1：俩点之间没有路劲（需要转一下才有路径）</p>
+<p>最短路问题—–&gt;DIjstra（理论基础）</p>
+<p>本题:  每个点可能会入队多次，因为有边权为0存在。</p>
+<p>双向广搜：</p>
+<p>​    1.字串变换</p>
+<p>BFS  ：分成俩类：</p>
+<p>​    1.迷宫问题 </p>
+<p>​    2.最小步数： 八数码</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-六级备考笔记二（作文）">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">六级备考笔记二（作文）</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E8%8B%B1%E8%AF%AD/" class="cube-excerpt-tag-link">#英语</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="时态和语态"><a href="#时态和语态" class="headerlink" title="时态和语态"></a>时态和语态</h4><p>1）10种词性</p>
+<p>2）9种句子成分</p>
+<p>3）8个句型</p>
+<h4 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h4><h4 id="动词的分类"><a href="#动词的分类" class="headerlink" title="动词的分类"></a>动词的分类</h4><ul>
+<li>1）实义动词  ：行为动词（及物动词&amp;不及物动词）</li>
+<li>2）助动词  ：没有含义；帮助动词构成语态，否定句，强调句，疑问句<ul>
+<li>be动词：构词进行时和被动语态   He  is spilling things   I am writing this sentene</li>
+<li>系动词：区分（有没有含义）</li>
+<li>hava :构成现在完成时，完成进行时 ：I  have  read  many books .  jerry has bought a new shirt .</li>
+<li>do  :didn’t（否定句）     did     :   I   do  love  you(强调句)    </li>
+</ul>
+</li>
+<li>3）情态动词 ：不充当动词，但是有语义</li>
+<li>4）系动词<ul>
+<li>be 动词</li>
+<li>感官动词</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>四大语法：<ul>
+<li>1）时态   ：英文一定有时态  —-&gt;中文没有<ul>
+<li>正在进行—&gt;  表将来（马上要发生的将来）</li>
+</ul>
+</li>
+<li>2）语态   ： </li>
+<li>3）非谓语动词</li>
+<li>4）虚拟语气</li>
+</ul>
+</li>
+</ul>
+<p>时态图：</p>
+<p><img src="images/%E5%85%AD%E7%BA%A7.jpg" alt="">    </p>
+<p>最常用的时态轴：大时间，小时态</p>
+<p><img src="images/%E6%97%B6%E6%80%81.jpg" alt=""></p>
+<h4 id="一般现在时：1）现在时段发生的-2）习惯性动作-3）表达客观真理"><a href="#一般现在时：1）现在时段发生的-2）习惯性动作-3）表达客观真理" class="headerlink" title="一般现在时：1）现在时段发生的 2）习惯性动作  3）表达客观真理"></a>一般现在时：1）现在时段发生的 2）习惯性动作  3）表达客观真理</h4><p>1）肯定形式：  第三人称单数“单三” ，其他动词原形</p>
+<p>2）否定形式  ：don’t </p>
+<p>3)    疑问句   ：do  + 主语+</p>
+<h4 id="一般过去时：1）表过去发生的动作"><a href="#一般过去时：1）表过去发生的动作" class="headerlink" title="一般过去时：1）表过去发生的动作"></a>一般过去时：1）表过去发生的动作</h4><p>1）肯定 ：主语+动词过去式</p>
+<p>2）否定 ：主语+did not  +动词原形</p>
+<p>3）疑问 ：疑问词+did  +主语+动词原形</p>
+<p>形式+含义</p>
+<h4 id="一般将来时-：1）动作还未发生，未来发生"><a href="#一般将来时-：1）动作还未发生，未来发生" class="headerlink" title="一般将来时 ：1）动作还未发生，未来发生"></a>一般将来时 ：1）动作还未发生，未来发生</h4><p>1）肯定 ：主语+will +动词原形</p>
+<p>2)否定：主语+won’t  (will not ) +动词原形</p>
+<p>3）疑问：疑问词+will+主语+动词原形</p>
+<h4 id="现在进行：表示动作正在发生"><a href="#现在进行：表示动作正在发生" class="headerlink" title="现在进行：表示动作正在发生"></a>现在进行：表示动作正在发生</h4><p>1）肯定：主语+be动词+动词ing</p>
+<p>2)  否定：主语+be  not +动词ing</p>
+<p>3)疑问 ：疑问词+be +主语+动词ing</p>
+<h4 id="现在完成时：1）动词发生在过去，对现在造成影响"><a href="#现在完成时：1）动词发生在过去，对现在造成影响" class="headerlink" title="现在完成时：1）动词发生在过去，对现在造成影响"></a>现在完成时：1）动词发生在过去，对现在造成影响</h4><p>1）主语+have /has +过去分词</p>
+<p>2）否定 + haven’t +过去分词</p>
+<h4 id="动词的语态：1）主动-：动作的执行者做主语-2）被动-：动作的承受者做主语"><a href="#动词的语态：1）主动-：动作的执行者做主语-2）被动-：动作的承受者做主语" class="headerlink" title="动词的语态：1）主动 ：动作的执行者做主语    2）被动  ：动作的承受者做主语"></a>动词的语态：1）主动 ：动作的执行者做主语    2）被动  ：动作的承受者做主语</h4><ul>
+<li>1）被动语态的定义</li>
+<li>2）主动改被动的步骤<ul>
+<li>1）宾语改成主语</li>
+<li>2）将动词改成 be done </li>
+<li>3)  主语改成by   主语</li>
+</ul>
+</li>
+<li>3）基础时态的被动语态</li>
+<li>4）特殊情况</li>
+</ul>
+<p>基础时态被动：</p>
+<p><img src="images/%E8%A2%AB%E5%8A%A8.jpg" alt=""></p>
+<p><img src="images/%E8%A2%AB%E5%8A%A82.jpg" alt=""></p>
+<p>​    (1)双宾的被动语态：</p>
+<p>​    有俩个被动语态</p>
+<p>​    (2)宾补的被动语态 （只有一个宾语—&gt;只有一个被动句）</p>
+<p>​    </p>
+<p>​    </p>
+<ul>
+<li>三大从句 ：长句才能得高分</li>
+</ul>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%E4%BA%8C/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-Vim编辑器的详细教程">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/04/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Vim编辑器的详细教程</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-04
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/Vim-linux/" class="cube-excerpt-tag-link">#Vim  linux</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>vim编辑器：</p>
+<p>​    文本编辑器：</p>
+<p>​        文本：纯文本信息，ASCII text ,不能有任何修饰信息（颜色，字体，大小）</p>
+<p>​        支持：ASCII码（纯英文），UNICODE（全球统一编码）； GBK（中文编码）</p>
+<p>​        </p>
+<p>文本编辑器分类：</p>
+<p>​    行编辑器：sed</p>
+<p>​    全屏编辑器：vi,nano ,vim  </p>
+<p>​    单词：Visual  interface ;   Vi  improved </p>
+<p>vim：模式化的编辑器（在不同模式下：按键的功能不一样）</p>
+<p>​    基本模式：</p>
+<p>​            1）编辑模式 ：</p>
+<p>​            2）输入模式 ：</p>
+<p>​            3）末行模式（内置的命令行接口）：</p>
+<p>​        关闭保存：俩个大小的Z</p>
+<p>​    vim  [OPTION]  file </p>
+<p>​    +#  :打开文件后，直接让光标处于第#行行首</p>
+<p>​    +/pattern:打开文件后，直接让光标处于第一个被pattern匹配到的行的行首 </p>
+<p>​    模式转换：</p>
+<p>​        1）编辑模式（默认模式）：–&gt; 进入输入模式     </p>
+<ul>
+<li>i:  insert(在光标所在处输入)   </li>
+<li>a :append （光标所在处后方输入）  </li>
+<li>o  :在光标所在处下方打开新的行        </li>
+<li>I：（大写i)   :在光标所在行的行首输入</li>
+<li>A ：在光标所在行行尾输入</li>
+<li>O ：在光标所在行的上方打开新的一行</li>
+</ul>
+<p>​        2）输入模式：插入数据   –&gt; 编辑模式   </p>
+<ul>
+<li>ESC键</li>
+</ul>
+<p>​        3）末行模式  （非常强大的内置命令行接口）</p>
+<ul>
+<li>编辑模式—&gt;末行模式    输入冒号：</li>
+<li>可以输入指令进行一些操作（支持许多负咋操作）</li>
+<li>末行–&gt;编辑模式  ：ESC</li>
+</ul>
+<p>关闭文件：</p>
+<p>​            ZZ ：保存并退出 （编辑模式下）</p>
+<p>​            :q  退出  （末行模式下） </p>
+<p>​            :wq  保存修改并退出</p>
+<p>​            : x  保存并退出</p>
+<p>​            : w /path/to/somefile  (将修改保存到另外的文件中)</p>
+<p>光标跳转：</p>
+<p>​        字符间跳转 ：前面还可以加数字（代表跳几格）</p>
+<p>​                h: 向左跳一个字符</p>
+<p>​                l :向右跳一个字符</p>
+<p>​                j:向下跳转</p>
+<p>​                k :向上跳转</p>
+<p>​        单词间跳转</p>
+<p>​                w :下一个单词的词首</p>
+<p>​                b :当前或前一个单词的词首</p>
+<p>​                e :当前或后一个单词词尾</p>
+<p>​        行首行尾跳转</p>
+<p>​                ^ ：跳转到行首的第一个非空字符</p>
+<p>​                0：跳转到绝对行首</p>
+<p>​                &amp; ：跳转到绝对行尾</p>
+<p>​        行间跳转</p>
+<p>​                #G： 跳转至第#行行首</p>
+<p>​                1G,gg :跳转到行首</p>
+<p>​                G  ：跳转到行尾</p>
+<p>​        句间跳转：</p>
+<p>​            ）</p>
+<p>​           （</p>
+<p>​        段间跳转：</p>
+<p>​            }</p>
+<p>​            {</p>
+<p>翻屏：</p>
+<p>​    Ctrl+f  :向文件尾部翻一屏</p>
+<p>​    Ctrl+b :向文件首部翻一屏</p>
+<p>​    Ctrl+d :向文件尾部翻半屏</p>
+<p>​    Ctrl+u :向文件首部翻半屏</p>
+<p>​    k ,j  ：上下一行行的翻</p>
+<p>​    </p>
+<p>vim的编辑命令：</p>
+<p>​    字符编辑：</p>
+<p>​            x:  删除光标所在处的字符</p>
+<p>​            #x :删除光标所在处起始的#个字符</p>
+<p>​            xp: 交换光标所在处字符和其后面字符的位置</p>
+<p>​    替换命令</p>
+<p>​            r :替换光标所在处的字符 ，后面再加个字符</p>
+<p>​    删除命令</p>
+<p>​            x :</p>
+<p>​            d :删除命令，可结合光标跳转字符，实现范围删除</p>
+<p>​            d$ :删除当前到行尾</p>
+<p>​            d^: 删除当前到行首</p>
+<p>​            dw :删除一个单词</p>
+<p>​            de:</p>
+<p>​            db: </p>
+<p>​            dd :删除一行      </p>
+<p>​    都支持在加个数字 #dd  :删除光标所在行其实的供#行（删除的内容都会在缓冲器中–》可以粘贴）</p>
+<p>​    粘贴命令：</p>
+<p>​            p: 缓冲器中的内容如果为整行，则粘贴在当前光标所在行的下方，否则粘贴在光标后方</p>
+<p>​            P: 刚好相反（  上方，前方）</p>
+<p>​    复制命令（yank, y)：</p>
+<p>​            y : 复制，工作行为相似于d 命令</p>
+<p>​            y$ :</p>
+<p>​            y^:</p>
+<p>​            ye :</p>
+<p>​            yy :复制一整行</p>
+<p>​            yw :复制一个单词</p>
+<p>​    改变命令（change,c) :</p>
+<p>​            编辑模式—&gt; 输入模式 ； 实现删除操作</p>
+<p>​            cc  :删除一行，且转换成插入操作        </p>
+<p>​            其他的用法和d 一样</p>
+<p>​    可视化模式：</p>
+<p>​            v :  按字符选定 </p>
+<p>​            V  :按行选定    </p>
+<p>​            结合编辑命令：  d   c  y  p</p>
+<p>​    撤销操作：</p>
+<p>​            u : 撤销此前的操作（一般可保持50个） </p>
+<p>​            可结合数字使用</p>
+<p>​    撤销撤销操作：</p>
+<p>​            Ctrl+r  :恢复此前的撤销操作</p>
+<p>​    重复执行前一个编辑操作：</p>
+<p>​            .  （点号）：</p>
+<p>​    vim 自带的练习教程： vimtutor </p>
+<p>vim末行模式：  （内建的 命令行接口）</p>
+<p>​    编辑模式–&gt;末行模式  ：</p>
+<p>​    （1）：地址定界</p>
+<p>​            指明 :start_pos[,end_pos]</p>
+<p>​            #:  特定的第#行，例如5 第5行</p>
+<p>​            . :当前行    </p>
+<p>​            $:最后一行   </p>
+<p>​            #，#：指定行范围，左侧起始，右侧结束</p>
+<p>​            #，+# : 指定行范围，左侧起始，右侧相对偏移量 3,+7 </p>
+<p>​            1,$ :全文</p>
+<p>​            % ：全文</p>
+<p>​            /pattern/  :第一次被模式匹配到的行</p>
+<p>​    （2）</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/04/Vim%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">Read More</a>
+    </footer>
+</div>
+
 <div class="cube-excerpt" id="cube-excerpt-hexo博客安装">
     <header class="cube-excerpt-header">
         <h1><a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">hexo博客安装</a></h1>
@@ -400,8 +760,8 @@
     <a title="一名计算机专业的学生">一名计算机专业的学生</a>
     
     <div class="count">
-        <a class="count articles"><span>13</span>Article</a>
-        <a class="count tags"><span>10</span>Tags</a>
+        <a class="count articles"><span>16</span>Article</a>
+        <a class="count tags"><span>13</span>Tags</a>
         <a class="count categories"><span>3</span>Categories</a>
     </div>
 </div>
@@ -439,7 +799,7 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/06/%E7%A7%81%E6%9C%89%E4%BA%91%E6%90%AD%E5%BB%BA/" title="搭建私有云">搭建私有云</a>
+                    <a href="/2020/04/06/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%BD%B1%E8%A7%86%E7%BD%91%E7%AB%99/" title="如何搭建自己的影视网站">如何搭建自己的影视网站</a>
                 </p>
             </div>
             
@@ -453,7 +813,7 @@
                     <span>2</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/06/%E8%B4%AA%E5%BF%83/" title="贪心">贪心</a>
+                    <a href="/2020/04/06/linux%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE%E6%8C%87%E4%BB%A4/" title="linux文件查找命令">linux文件查找命令</a>
                 </p>
             </div>
         </li>
@@ -466,7 +826,7 @@
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/" title="二分图">二分图</a>
+                    <a href="/2020/04/06/%E8%B4%AA%E5%BF%83%E4%BA%8C/" title="贪心">贪心</a>
                 </p>
             </div>
         </li>
@@ -479,7 +839,7 @@
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/05/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="最小生成树">最小生成树</a>
+                    <a href="/2020/04/06/%E7%A7%81%E6%9C%89%E4%BA%91%E6%90%AD%E5%BB%BA/" title="搭建私有云">搭建私有云</a>
                 </p>
             </div>
         </li>
@@ -492,7 +852,7 @@
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/" title="最短路问题总结">最短路问题总结</a>
+                    <a href="/2020/04/06/%E8%B4%AA%E5%BF%83/" title="贪心">贪心</a>
                 </p>
             </div>
         </li>
@@ -536,12 +896,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/hexo/">#hexo</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Gitment/">#Gitment</a>
         </div>
         
@@ -551,7 +911,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E8%8B%B1%E8%AF%AD/">#英语</a>
         </div>
         
@@ -576,13 +936,28 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83/">#算法 贪心</a>
         </div>
         
         
         <div class="cube-box ">
             <a href="/tags/VPS-%E4%BA%91%E7%9B%98/">#VPS  云盘</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/shell-linux/">#shell linux</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%94%B5%E5%BD%B1/">#电影</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/Vim-linux/">#Vim  linux</a>
         </div>
         
     </div>

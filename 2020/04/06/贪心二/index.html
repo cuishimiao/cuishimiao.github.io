@@ -12,7 +12,7 @@
     
     
     
-    <title>Categories: 算法 | csm&#39;s blog</title>
+    <title>贪心 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -173,53 +173,64 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">贪心</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">算法</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/04/06/%E8%B4%AA%E5%BF%83%E4%BA%8C/">贪心</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/06/%E8%B4%AA%E5%BF%83/">贪心</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/05/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">最小生成树</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/">最短路问题总结</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/">习题总结</a>
-            </li>
-            
-            <li class="post">
-                <a href="/2020/04/04/%E6%90%9C%E7%B4%A2%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/">习题总结</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-06
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83/">#算法 贪心</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <p>第一题：排队打水</p>
+<p>特点：每一个同学打水，后面的同学都得等他。<br>所以当有n个同学的时候：总时间=t1<em>(n-1)+t2</em>(n-2)+…+tn*0</p>
+<p>特点：第一个人乘的数最大，最后一个人乘的最少。<br>要想让总和最小：应该让小的人放前面。</p>
+<p>第二题： 货仓选址（排序不等式）</p>
+<p>f(x)= |x1-x|+|x2-x|+…+|xn-x|</p>
+<p>可以分组：第一个点和倒数第一个点<br>思维图：</p>
+<p><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/gIPGPddA8guL.png?imageslim" alt="mark"></p>
+<p>第三题： 耍杂技的牛</p>
+<p>图示：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/riPR58z2EhsF.png?imageslim" alt="mark"></p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2020/04/06/linux%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE%E6%8C%87%E4%BB%A4/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                linux文件查找命令
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2020/04/06/%E7%A7%81%E6%9C%89%E4%BA%91%E6%90%AD%E5%BB%BA/">
+                搭建私有云
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
         </div>
         <div class="cube-right">
             
@@ -374,12 +385,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E8%8B%B1%E8%AF%AD/">#英语</a>
         </div>
         
@@ -405,7 +416,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
@@ -415,12 +426,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E6%90%9C%E7%B4%A2-BFS/">#算法 搜索  BFS</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E7%9F%AD%E8%B7%AF/">#算法 最短路</a>
         </div>
         
@@ -430,12 +441,12 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E5%9B%BE-%E5%9B%BE%E8%AE%BA/">#算法 二分图   图论</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83/">#算法 贪心</a>
         </div>
         
@@ -450,7 +461,7 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/%E7%94%B5%E5%BD%B1/">#电影</a>
         </div>
         
