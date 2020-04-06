@@ -174,6 +174,93 @@
     <div class="cube-content">
         <div class="cube-left">
             
+<div class="cube-excerpt" id="cube-excerpt-搭建私有云">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/06/%E7%A7%81%E6%9C%89%E4%BA%91%E6%90%AD%E5%BB%BA/">搭建私有云</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-06
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/VPS-%E4%BA%91%E7%9B%98/" class="cube-excerpt-tag-link">#VPS  云盘</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>前提：必须拥有一台服务器</p>
+<p>接下来就开始安装了：<br>1.安装宝塔面板：<br>centos 的安装指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
+<p>Ubuntu的安装指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>宝塔面板的升级指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;update6.sh|bash</span><br></pre></td></tr></table></figure>
+
+<p>安装完宝塔面板之后，安装一个Apache和PHP就可了，不需要数据库。<br>然后新建一个站点。</p>
+<p>第二步：<br>安装Veno file manager<br><a href="http://182.92.110.18/vfm-admin/vfm-downloader.php?q=dXBsb2Fkcy92ZW5vLWZpbGUtbWFuYWdlci12M180Xzguemlw&h=a574a77c9f6a5f7836504dc42e10bbf9" target="_blank" rel="noopener">下载</a></p>
+<p>下载完成后，通过宝塔面板上传上去到网站跟目录，解压，将Fvm文件里面的内容粘贴到根目录，就可以访问站点就行设置了。<br>默认账号:admin 密码：password.</p>
+<p>安装完成后的效果图：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/gTbH802aBTJ6.png?imageslim" alt="mark"></p>
+<p>点击链接就可以下载。</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/06/%E7%A7%81%E6%9C%89%E4%BA%91%E6%90%AD%E5%BB%BA/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-贪心">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2020/04/06/%E8%B4%AA%E5%BF%83/">贪心</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2020-04-06
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83/" class="cube-excerpt-tag-link">#算法 贪心</a>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h4 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>一般做法：<br>1）区间问题  –》排序  （按左端点，按右端点）<br>2）贪心是一种短视的作法，每次都选择当前最优解（局部最优解）</p>
+<p>第一题：区间选点，让每个区间至少包含一个点，数轴上至少可以放几个点<br>贪心步骤：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/qJBkpJG56qb0.png?imageslim" alt="mark"></p>
+<p>证明方法：要证明A==B   可以整A&gt;=B  和A&lt;=B   ===》  A==B<br>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Range</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt; (<span class="keyword">const</span> Range &amp;W)<span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> r &lt; W.r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;range[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;range[i].l, &amp;range[i].r);</span><br><span class="line">    sort(range, range + n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>, ed = <span class="number">-2e9</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">        <span class="keyword">if</span> (range[i].l &gt; ed)</span><br><span class="line">        &#123;</span><br><span class="line">            res ++ ;</span><br><span class="line">            ed = range[i].r;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, res);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二题：最大不相交区间数目</p>
+<p>算法步骤：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/qaSJaaYomSah.png?imageslim" alt="mark"></p>
+<p>和上题一模一样，把区间问题，转换成选点问题</p>
+<p>第三题：区间分组 ：将区间分成若干组，使得任意俩俩区间直接没有交集，求最小组数。</p>
+<p>算法步骤：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/MHvKY2S9IJbz.png?imageslim" alt="mark"></p>
+<p>堆： 动态维护最小值，最大值</p>
+<p>第四题：区间覆盖： 给定一个区间，需要将其覆盖，至少需要多少个给定的区间。</p>
+<p>算法步骤：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/QSUuyTmrKLqg.png?imageslim" alt="mark"></p>
+<p>代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> start,<span class="built_in">end</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;start&gt;&gt;<span class="built_in">end</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l,r;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;l&gt;&gt;r;</span><br><span class="line">        range[i]=&#123;l,r&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(range,range+n);</span><br><span class="line">    <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> success=<span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ed=<span class="number">-2e9</span>;</span><br><span class="line">        <span class="keyword">int</span> j=i;</span><br><span class="line">        <span class="keyword">while</span>(j&lt;n &amp;&amp; range[j].l&lt;=start)</span><br><span class="line">        &#123;</span><br><span class="line">            ed=<span class="built_in">max</span>(ed,range[j].r);</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ed&lt;start)</span><br><span class="line">        &#123;</span><br><span class="line">            res=<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">         res++;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span>(ed&gt;=<span class="built_in">end</span>) </span><br><span class="line">         &#123;</span><br><span class="line">             success=<span class="literal">true</span>;</span><br><span class="line">             <span class="keyword">break</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         start=ed;</span><br><span class="line">         i=j<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!success) res=<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;res&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4><p>第一题： 合并果子</p>
+<p>思路：<br>每一次都合并最小的俩堆  — 》维护最小值，可以用堆来实现。</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2020/04/06/%E8%B4%AA%E5%BF%83/">Read More</a>
+    </footer>
+</div>
+
 <div class="cube-excerpt" id="cube-excerpt-二分图">
     <header class="cube-excerpt-header">
         <h1><a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a></h1>
@@ -912,123 +999,6 @@
     </footer>
 </div>
 
-<div class="cube-excerpt" id="cube-excerpt-hexo博客安装">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">hexo博客安装</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2020-04-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/hexo/" class="cube-excerpt-tag-link">#hexo</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>1.安装指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>2.将博客生成静态站点</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo   g</span><br></pre></td></tr></table></figure>
-
-<p>3 .生成的public文件夹就自己当成静态网站进行部署</p>
-<p>hexo  server:启动服务</p>
-<p>4.自定义主题（网址）：</p>
-<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;ZEROKISEKI&#x2F;hexo-theme-cube.git themes&#x2F;cube --depth 1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
-
-<p>5.图床（图片处理） ：七牛云</p>
-<p>6）评论系统：</p>
-<ul>
-<li>disqus</li>
-<li>来必力</li>
-</ul>
-<p>7）搜索：  swiftype 网站</p>
-<h4 id="npm换源："><a href="#npm换源：" class="headerlink" title="npm换源："></a>npm换源：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p>8）访问量的来源统计：</p>
-<p>友盟：</p>
-<p>CNZZ</p>
-<p>百度</p>
-<p>9）上传到github：</p>
-<ul>
-<li>为 Hexo 安装 Git 插件<br>安装 hexo-deployer-git，否则会报 ERROR Deployer not found: git 的错误。<br><code>npm install hexo-deployer-git --save</code></li>
-<li>生成静态文件和部署：<br><code>hexo g &amp; d</code></li>
-</ul>
-
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">Read More</a>
-    </footer>
-</div>
-
-<div class="cube-excerpt" id="cube-excerpt-hexo添加评论功能-Gitment评论系统">
-    <header class="cube-excerpt-header">
-        <h1><a href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">hexo添加评论功能-Gitment评论系统</a></h1>
-        <div class="cube-excerpt-header-msg">
-            <div class="cube-excerpt-date">
-                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
-                2020-04-04
-            </div>
-            <div class="cube-excerpt-tags">
-                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
-                
-                <a href="/tags/Gitment/" class="cube-excerpt-tag-link">#Gitment</a>
-                
-            </div>
-        </div>
-    </header>
-    <article class="cube-excerpt-entry cube-markdown">
-        
-        
-           <p>第一步：注册 OAuth Application</p>
-<ol>
-<li><p>登录 Github。</p>
-</li>
-<li><p>前往 <a href="https://github.com/settings/profile" target="_blank" rel="noopener">https://github.com/settings/profile</a></p>
-</li>
-<li><p>点击左侧下方的 <code>Developer settings</code></p>
-</li>
-<li><p>点击绿色 <code>Register a new application</code></p>
-</li>
-<li><p>填写以下内容：</p>
-</li>
-</ol>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Application name：Gitment</span><br><span class="line">Homepage URL：https:&#x2F;&#x2F;ryanluoxu.github.io&#x2F;</span><br><span class="line">Application description：Blog comment system</span><br><span class="line">Authorization callback URL：https:&#x2F;&#x2F;ryanluoxu.github.io&#x2F;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li><p>点击 Register application</p>
-</li>
-<li><p>得到：</p>
-<p>Client ID:</p>
-<p>Client Secret:</p>
-<p>第二步：创建存放 gitment-comments 的 repository</p>
-<p>打开 D:\blog\themes\next_config.yml<br>找到 Gitment<br>如下修改：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">gitment:</span><br><span class="line">  enable: true</span><br><span class="line">  mint: true 		# RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway</span><br><span class="line">  count: true 		# Show comments count in post meta area</span><br><span class="line">  lazy: false 		# Comments lazy loading with a button</span><br><span class="line">  cleanly: false 	# Hide &#39;Powered by ...&#39; on footer, and more</span><br><span class="line">  language: 		# Force language, or auto switch by theme</span><br><span class="line">  github_user: ryanluoxu 	# 此处 - Your Github ID</span><br><span class="line">  github_repo: gitment-comments # 此处注意 - The repo you use to store Gitment comments</span><br><span class="line">  client_id: xxxxxxxxxxxxxxxxxx # 此处 - Github client id for the Gitment</span><br><span class="line">  client_secret: xxxxxxxxxxxxx # 此处 - Github access secret token for the Gitment</span><br><span class="line">  proxy_gateway: # Address of api proxy, See: https:&#x2F;&#x2F;github.com&#x2F;aimingoo&#x2F;intersect</span><br><span class="line">  redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled</span><br></pre></td></tr></table></figure>
-
-<p>最后:之后生成并且部署才会生效，本地有时没有效果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-<p>之后文章底部会出现 <code>初始化本文的评论页</code>，点击初始化。</p>
-
-        
-    </article>
-    <footer class="cube-excerpt-footer">
-        <a class="cube-excerpt-more" href="/2020/04/04/hexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD-Gitment%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Read More</a>
-    </footer>
-</div>
-
 
 
 <ul class="cube-pagination cube-pagination-6">
@@ -1100,8 +1070,8 @@
     <a title="一名计算机专业的学生">一名计算机专业的学生</a>
     
     <div class="count">
-        <a class="count articles"><span>11</span>Article</a>
-        <a class="count tags"><span>8</span>Tags</a>
+        <a class="count articles"><span>13</span>Article</a>
+        <a class="count tags"><span>10</span>Tags</a>
         <a class="count categories"><span>3</span>Categories</a>
     </div>
 </div>
@@ -1139,7 +1109,7 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/" title="二分图">二分图</a>
+                    <a href="/2020/04/06/%E7%A7%81%E6%9C%89%E4%BA%91%E6%90%AD%E5%BB%BA/" title="搭建私有云">搭建私有云</a>
                 </p>
             </div>
             
@@ -1153,7 +1123,7 @@
                     <span>2</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/05/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="最小生成树">最小生成树</a>
+                    <a href="/2020/04/06/%E8%B4%AA%E5%BF%83/" title="贪心">贪心</a>
                 </p>
             </div>
         </li>
@@ -1166,7 +1136,7 @@
                     <span>3</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/" title="最短路问题总结">最短路问题总结</a>
+                    <a href="/2020/04/05/%E4%BA%8C%E5%88%86%E5%9B%BE/" title="二分图">二分图</a>
                 </p>
             </div>
         </li>
@@ -1179,7 +1149,7 @@
                     <span>4</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/04/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/" title="英语六级备考笔记">英语六级备考笔记</a>
+                    <a href="/2020/04/05/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" title="最小生成树">最小生成树</a>
                 </p>
             </div>
         </li>
@@ -1192,7 +1162,7 @@
                     <span>5</span>
                 </p>
                 <p class="title">
-                    <a href="/2020/04/04/%E4%B9%A0%E9%A2%98%E6%80%BB%E7%BB%93%EF%BC%9A/" title="习题总结">习题总结</a>
+                    <a href="/2020/04/05/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98/" title="最短路问题总结">最短路问题总结</a>
                 </p>
             </div>
         </li>
@@ -1210,17 +1180,17 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E6%8A%80%E6%9C%AF/">#技术</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E8%8B%B1%E8%AF%AD/">#英语</a>
         </div>
         
@@ -1236,12 +1206,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/hexo/">#hexo</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/Gitment/">#Gitment</a>
         </div>
         
@@ -1261,18 +1231,28 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E7%9F%AD%E8%B7%AF/">#算法 最短路</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E5%9B%BE%E8%AE%BA/">#算法 最小生成树   图论</a>
         </div>
         
         
         <div class="cube-box ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E5%9B%BE-%E5%9B%BE%E8%AE%BA/">#算法 二分图   图论</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83/">#算法 贪心</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/VPS-%E4%BA%91%E7%9B%98/">#VPS  云盘</a>
         </div>
         
     </div>

@@ -12,7 +12,7 @@
     
     
     
-    <title>Tags: hexo | csm&#39;s blog</title>
+    <title>搭建私有云 | csm&#39;s blog</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -173,29 +173,62 @@
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">搭建私有云</h1>
     
-    <div class="cube-archive" style="margin-top: 0;">
-        <h1 class="title">hexo</h1>
-        
-        <ul class="posts">
-            
-            <li class="post">
-                <a href="/2020/04/04/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85/">hexo博客安装</a>
-            </li>
-            
-        </ul>
-        
-    </div>
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-04-06
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/VPS-%E4%BA%91%E7%9B%98/">#VPS  云盘</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <p>前提：必须拥有一台服务器</p>
+<p>接下来就开始安装了：<br>1.安装宝塔面板：<br>centos 的安装指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
+<p>Ubuntu的安装指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>宝塔面板的升级指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;update6.sh|bash</span><br></pre></td></tr></table></figure>
+
+<p>安装完宝塔面板之后，安装一个Apache和PHP就可了，不需要数据库。<br>然后新建一个站点。</p>
+<p>第二步：<br>安装Veno file manager<br><a href="http://182.92.110.18/vfm-admin/vfm-downloader.php?q=dXBsb2Fkcy92ZW5vLWZpbGUtbWFuYWdlci12M180Xzguemlw&h=a574a77c9f6a5f7836504dc42e10bbf9" target="_blank" rel="noopener">下载</a></p>
+<p>下载完成后，通过宝塔面板上传上去到网站跟目录，解压，将Fvm文件里面的内容粘贴到根目录，就可以访问站点就行设置了。<br>默认账号:admin 密码：password.</p>
+<p>安装完成后的效果图：<br><img src="http://q89qonrz7.bkt.clouddn.com/blog/20200406/gTbH802aBTJ6.png?imageslim" alt="mark"></p>
+<p>点击链接就可以下载。</p>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        
+        <li class="next">
+            <a href="/2020/04/06/%E8%B4%AA%E5%BF%83/">
+                贪心
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
         </div>
         <div class="cube-right">
             
@@ -350,12 +383,12 @@
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/categories/%E7%AE%97%E6%B3%95/">#算法</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/categories/%E8%8B%B1%E8%AF%AD/">#英语</a>
         </div>
         
@@ -371,12 +404,12 @@
     <div class="cube-boxs">
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/hexo/">#hexo</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/Gitment/">#Gitment</a>
         </div>
         
@@ -401,22 +434,22 @@
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-%E5%9B%BE%E8%AE%BA/">#算法 最小生成树   图论</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E5%9B%BE-%E5%9B%BE%E8%AE%BA/">#算法 二分图   图论</a>
         </div>
         
         
-        <div class="cube-box ">
+        <div class="cube-box-bg ">
             <a href="/tags/%E7%AE%97%E6%B3%95-%E8%B4%AA%E5%BF%83/">#算法 贪心</a>
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/VPS-%E4%BA%91%E7%9B%98/">#VPS  云盘</a>
         </div>
         
