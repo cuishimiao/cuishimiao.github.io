@@ -30,11 +30,13 @@ description: > # this means to ignore newlines until "Language & timezone"
 lang: # the language of your site, default as "en"
 timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
+# ✅ 正确：2 空格缩进，冒号后空格
 navigation:
-  - title: 博客
+  - title: "博客"
     url: /
-  - title: 简历
+  - title: "简历"
     url: /resume
+
 
 ## => Author and Social
 ##############################
