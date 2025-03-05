@@ -20,7 +20,7 @@ text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate"
 highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : Your Site Title
+title   : 码上智能
 description: > # this means to ignore newlines until "Language & timezone"
   Your Site Description
 
@@ -30,6 +30,11 @@ description: > # this means to ignore newlines until "Language & timezone"
 lang: # the language of your site, default as "en"
 timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
+navigation:
+  - title: 博客
+    url: /
+  - title: 简历
+    url: /resume
 
 ## => Author and Social
 ##############################
