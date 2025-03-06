@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: article
 titles:
   # @start locale config
   en      : &EN       About
@@ -27,7 +27,8 @@ key: page-about
 ---
 
 
-# About Me | 智能驾驶探索者的技术手记
+# **About Me | 智能驾驶探索者的技术手记**
+
 
 
 ## **🧑💻 我是谁**
@@ -47,7 +48,7 @@ key: page-about
 **CV & 深度学习研究方向**
 - 提出**多模态特征解耦算法**，在nuScenes数据集上实现3D目标检测mAP提升11.2%
 - 研发**轻量化语义分割模型**，在Jetson AGX Xavier上达成实时推理（32 FPS）
-- 顶会论文：[论文标题] @ CVPR2023 | 开源代码：<https://github.com/cuishimiao>
+- 顶会论文：[论文标题] @ CVPR2023 | 开源代码：<https://github.com/yourname>
 
 ---
 
