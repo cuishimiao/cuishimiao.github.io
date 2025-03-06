@@ -2,8 +2,8 @@
 title: 如何用github搭建博客
 tags: 
     - 开源
-    - DevOps
-    - 前端工程
+    - 博客
+    - Github
 ---
 
 
