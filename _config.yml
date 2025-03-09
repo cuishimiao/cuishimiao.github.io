@@ -35,7 +35,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type      : # "person" (default), "organization"
-  name      : Your Name
+  name      : 码上智能
   url       :
   avatar    : # path or url of avatar image (square)
   bio       : I am an amazing person.
@@ -66,7 +66,20 @@ paths:
   home    : # home layout url, "/" (default)
   archive : # "/archive.html" (default)
   rss     : # "/feed.xml" (default)
-  sitemap : "/专栏/ai-series"
+
+
+# ===========================  
+# TeXt Theme 导航栏专属配置  
+# ===========================  
+tabs:  
+  - name    : "🏠 首页"  
+    path    : /  
+  - name    : "🤖 AI修仙专栏"  
+    path    : /专栏/ai-series/  
+  - name    : "📚 文档"  
+    path    : /docs/  
+  - name    : "👽 关于"  
+    path    : /resume  
 
 
 ## => Post
