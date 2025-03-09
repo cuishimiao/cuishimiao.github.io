@@ -30,15 +30,6 @@ description: > # this means to ignore newlines until "Language & timezone"
 lang: # the language of your site, default as "en"
 timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
-# _config.yml
-main:
-  links:
-    - title: "博客"
-      url: /
-    - title: "简历"
-      url: /resume
-    - title: "AI"
-      url: /专栏/ai-series/
 
 
 
@@ -212,11 +203,13 @@ exclude:
   - /test
   - /vendor
 
+# 正确配置方式
 defaults:
   - scope:
-      path: ""
-      type: posts
+      path: "_posts/专栏/ai-series"  # 指定子目录
+      type: posts                   # 依然属于posts集合
     values:
+      series: "AI学习之路"           # 通过元数据筛选
       layout: article
       sharing: true
       license: true
