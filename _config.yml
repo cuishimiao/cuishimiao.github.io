@@ -30,12 +30,23 @@ description: > # this means to ignore newlines until "Language & timezone"
 lang: # the language of your site, default as "en"
 timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
+# _config.yml
+main:
+  links:
+    - title: "博客"
+      url: /
+    - title: "简历"
+      url: /resume
+    - title: "AI"
+      url: /专栏/ai-series/
+
+
 
 ## => Author and Social
 ##############################
 author:
   type      : # "person" (default), "organization"
-  name      : 码上智能
+  name      : Your Name
   url       :
   avatar    : # path or url of avatar image (square)
   bio       : I am an amazing person.
@@ -66,21 +77,6 @@ paths:
   home    : # home layout url, "/" (default)
   archive : # "/archive.html" (default)
   rss     : # "/feed.xml" (default)
-
-
-
-# ===========================  
-# TeXt Theme 导航栏专属配置  
-# ===========================  
-tabs:  
-  - name    : "🏠 首页"  
-    path    : /  
-  - name    : "🤖 AI修仙专栏"  
-    path    : /专栏/ai-series/  
-  - name    : "📚 文档"  
-    path    : /docs/  
-  - name    : "👽 关于"  
-    path    : /resume  
 
 
 ## => Post
@@ -216,19 +212,11 @@ exclude:
   - /test
   - /vendor
 
-# 允许嵌套分类
-collections:
-  posts:
-    output: true
-    permalink: /:categories/:title/
-
 defaults:
   - scope:
-      path: "_posts/专栏/ai-series"
+      path: ""
       type: posts
     values:
-      series: "AI学习之路"
-      category: "AI修仙"
       layout: article
       sharing: true
       license: true

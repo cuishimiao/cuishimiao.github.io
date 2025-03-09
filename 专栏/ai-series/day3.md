@@ -1,10 +1,12 @@
----  
-layout: post  
-title: "AI入门第三天：微积分：梯度概念"  
-**series: AI学习之路**  # ← 重点！专栏身份证  
-date: 2025-03-4 
-permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
----  
+---
+# 正确示例 ✅
+layout: post
+title: "修仙Day1：神经网络入门"
+date: 2024-03-20 14:30:00 +0800
+series: "AI学习之路"  # 必须与配置一致
+categories: AI修仙
+---
+
 # Day 3: 微积分：梯度概念（手动推导感知机梯度）
 
 
