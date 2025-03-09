@@ -76,4 +76,4 @@ header:
       fr-LU   : *FR
       tr      : &TR       Hakkında
       # @end locale config
-    url: /专栏/ai-series/
+    url: _posts/专栏/ai-series
