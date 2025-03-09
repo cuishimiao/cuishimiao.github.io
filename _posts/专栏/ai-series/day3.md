@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第三天：微积分：梯度概念"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-4 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 ---  
 # Day 3: 微积分：梯度概念（手动推导感知机梯度）
 

@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第六天：深度学习初探"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-7 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 --- 
 # Day 6: 深度学习初探
 

@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第四天：逻辑回归"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-5 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 ---  
 
 # Day 4: 逻辑回归（用Sklearn实现乳腺癌分类）

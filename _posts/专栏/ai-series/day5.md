@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第五天：决策树"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-6 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 ---  
 # Day 5: 决策树（可视化分类边界）
 

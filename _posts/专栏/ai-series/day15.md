@@ -1,3 +1,9 @@
+---
+title: "你的文章标题"
+date: 2024-03-20  # ← 必须包含日期字段
+series: "AI学习之路"  # ← 系列标识符需完全一致
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
+---
 # Day 15:自定义Dataset类（处理非标准数据）
 
 

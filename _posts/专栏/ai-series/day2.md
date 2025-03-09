@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第二天：概率统计"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-3 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 ---  
 
 # Day 2: 概率统计：贝叶斯定理、高斯分布（Python代码验证）

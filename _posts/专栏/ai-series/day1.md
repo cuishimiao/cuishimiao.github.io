@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第一课：AI核心基础构建"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-2 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 ---  
 
 

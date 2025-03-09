@@ -3,6 +3,7 @@ layout: post
 title: "AI入门第八天：深度学习核心技术(CNN架构解析)"  
 **series: AI学习之路**  # ← 重点！专栏身份证  
 date: 2025-03-9 
+permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
 --- 
 # Day 8-10: 深度学习核心技术(CNN架构解析)
 

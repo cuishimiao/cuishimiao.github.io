@@ -67,6 +67,11 @@ paths:
   archive : # "/archive.html" (default)
   rss     : # "/feed.xml" (default)
 
+# 允许嵌套分类
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
 
 # ===========================  
 # TeXt Theme 导航栏专属配置  
