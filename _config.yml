@@ -30,15 +30,14 @@ description: > # this means to ignore newlines until "Language & timezone"
 lang: # the language of your site, default as "en"
 timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
-# _config.yml
-main:
-  links:
-    - title: "博客"
-      url: /
-    - title: "简历"
-      url: /resume
-
-
+# 找到_config.yml中的导航设置  
+navigation:  
+  - title: 首页  
+    url: /  
+  - title: AI专栏  
+    url: /专栏/ai-series/  # ← 新增条目  
+  - title: 关于  
+    url: /resume
 
 ## => Author and Social
 ##############################
