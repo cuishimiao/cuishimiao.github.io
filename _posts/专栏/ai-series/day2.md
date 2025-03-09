@@ -1,10 +1,12 @@
----  
-layout: post  
-title: "AI入门第二天：概率统计"  
-**series: AI学习之路**  # ← 重点！专栏身份证  
-date: 2025-03-3 
-permalink: /专栏/ai-series/:title/  # ← 自定义URL结构
----  
+---
+# 正确示例 ✅
+layout: post
+title: "修仙Day1：神经网络入门"
+date: 2024-03-20 14:30:00 +0800
+series: "AI学习之路"  # 必须与配置一致
+categories: AI修仙
+---
+
 
 # Day 2: 概率统计：贝叶斯定理、高斯分布（Python代码验证）
 

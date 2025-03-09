@@ -1,24 +1,22 @@
+{% raw %}<!-- /专栏/ai-series.md -->
 ---
 layout: page
-title: "AI修仙之路"
+title: "AI修仙专栏"
 permalink: /专栏/ai-series/
 ---
 
-{% raw %}{% assign series_posts = site.posts 
-  | where: "series", "AI学习之路" 
-  | sort: "date" 
-%}
-
 <ul class="post-list">
+  {% assign series_posts = site.posts 
+    | where: "series", "AI学习之路" 
+    | sort: "date" 
+  %}
+  
   {% for post in series_posts %}
     <li>
-      <h2>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }} 
-          <time>{{ post.date | date: "%Y.%m.%d" }}</time>
-        </a>
-      </h2>
-      {{ post.excerpt | strip_html }}
+      <a href="{{ post.url | relative_url }}" class="post-link">
+        {{ post.title }} 
+        <time>{{ post.date | date: "%Y.%m.%d" }}</time>
+      </a>
     </li>
   {% endfor %}
 </ul>{% endraw %}
